@@ -1,0 +1,236 @@
+/*===============================
+=            BUTTONS            =
+===============================*/
+
+.btn {
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 0;
+	background: none;
+	padding: 0;
+	border: 0;
+	text-decoration: none !important;
+	outline: 0 !important;
+	cursor: pointer;
+}
+
+.fw-btn {
+	width: 100%;
+}
+.btn-bold {
+	font-weight: 700;
+}
+
+.btn-gray {
+	height: 50px;
+	background: #3c464e;
+	border: 1px solid #424d57;
+	line-height: 49px;
+	transition: background 0.5s ease;
+	position: relative;
+	color: white !important;
+	font-size: 14px;
+	padding-left: 15px;
+	padding-right: 15px;
+	&.fw-btn {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	&:hover {
+		background: #424d57;
+	}
+}
+
+.btn-gray__topleft {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	pointer-events: none;
+	top: -2px;
+	left: -2px;
+	// background: red;
+	transition: width 0.5s ease, height 0.5s ease;
+	.btn:hover & {
+		width: 15px;
+		height: 15px;
+	}
+	&:before {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: #55b1ff;
+		box-shadow: 0 0 3px 1px rgba(85,177,255,0.5);
+	}
+	&:after {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 2px;
+		bottom: 0;
+		left: 0;
+		width: 2px;
+		background: #55b1ff;
+		box-shadow: 0 0 3px 1px rgba(85,177,255,0.5);
+	}
+}
+
+.btn-gray__topright {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	pointer-events: none;
+	top: -2px;
+	right: -2px;
+	// background: red;
+	transition: width 0.5s ease, height 0.5s ease;
+	.btn:hover & {
+		width: 15px;
+		height: 15px;
+	}
+	&:before {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: #55b1ff;
+		box-shadow: 0 0 3px 1px rgba(85,177,255,0.5);
+	}
+	&:after {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 2px;
+		bottom: 0;
+		right: 0;
+		width: 2px;
+		background: #55b1ff;
+		box-shadow: 0 0 3px 1px rgba(85,177,255,0.5);
+	}
+}
+
+.btn-gray__bottomright {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	pointer-events: none;
+	bottom: -2px;
+	right: -2px;
+	// background: red;
+	transition: width 0.5s ease, height 0.5s ease;
+	.btn:hover & {
+		width: 15px;
+		height: 15px;
+	}
+	&:before {
+		display: block;
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: #55b1ff;
+		box-shadow: 0 0 3px 1px rgba(85,177,255,0.5);
+	}
+	&:after {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 2px;
+		right: 0;
+		width: 2px;
+		background: #55b1ff;
+		box-shadow: 0 0 3px 1px rgba(85,177,255,0.5);
+	}
+}
+
+.btn-gray__bottomleft {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	pointer-events: none;
+	bottom: -2px;
+	left: -2px;
+	// background: red;
+	transition: width 0.5s ease, height 0.5s ease;
+	.btn:hover & {
+		width: 15px;
+		height: 15px;
+	}
+	&:before {
+		display: block;
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: #55b1ff;
+		box-shadow: 0 0 3px 1px rgba(85,177,255,0.5);
+	}
+	&:after {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 2px;
+		left: 0;
+		width: 2px;
+		background: #55b1ff;
+		box-shadow: 0 0 3px 1px rgba(85,177,255,0.5);
+	}
+}
+
+.btn-blue {
+	height: 50px;
+	background: #55b0fe;
+	line-height: 49px;
+	border: 1px solid #55b0fe;
+	transition: background 0.5s ease;
+	position: relative;
+	color: white !important;
+	font-size: 14px;
+	padding-left: 15px;
+	padding-right: 15px;
+	&.fw-btn {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	&:hover {
+		background: #55b0fe - #111;
+	}
+	.btn-gray__topleft:before,
+	.btn-gray__topleft:after,
+	.btn-gray__bottomright:before,
+	.btn-gray__bottomright:after {
+		background: #272f4a;
+		box-shadow: 0 0 3px 1px rgba(39,47,74,0.5);
+	}
+}
+
+.btn-lblue {
+	height: 50px;
+	background: #eef7fd;
+	line-height: 49px;
+	border: 1px solid #e1f1fd;
+	transition: background 0.5s ease;
+	position: relative;
+	color: #333 !important;
+	font-size: 14px;
+	padding-left: 15px;
+	padding-right: 15px;
+	&:hover {
+		background: #e1f1fd;
+	}
+}
+
+/*=====  End of BUTTONS  ======*/

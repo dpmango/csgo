@@ -1,0 +1,111 @@
+/*===========================
+=            faq            =
+===========================*/
+
+.faq {
+	margin-top: -6px;
+}
+
+.faq__title {
+	h2 {
+		font-size: 30px;
+		text-transform: uppercase;
+		color: #55b1ff;
+		font-family: "Oswald";
+		font-weight: 300;
+		letter-spacing: 2px;
+	}
+}
+
+.faq__cnt {
+	margin-top: 29px;
+}
+
+.faq__block {
+	border-bottom: 1px solid #ebecee;
+	padding-bottom: 26px;
+	@media (max-width: @screen-xs-max) {
+		padding-bottom: 15px;
+	}
+	& + .faq__block {
+		margin-top: 24px;
+		@media (max-width: @screen-xs-max) {
+			margin-top: 16px;
+		}
+	}
+}
+
+.faq__block__title {
+	color: #1c1d1e !important;
+	font-size: 22px;
+	font-weight: 500;
+	display: block;
+	position: relative;
+	padding-right: 80px;
+	transition: color 0.5s ease;
+	@media (max-width: @screen-xs-max) {
+		padding-right: 40px;
+		font-size: 18px;
+	}
+	&:hover {
+		color: #55b1ff !important;
+	}
+}
+
+.faq__block__cnt {
+	padding-top: 7px;
+	max-width: 820px;
+	color: #232a30;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 27px;
+	display: none;
+	@media (max-width: @screen-xs-max) {
+		font-size: 16px;
+		line-height: 24px;
+	}
+}
+
+.faq__block__plus {
+	width: 15px;
+	height: 15px;
+	// background: red;
+	position: absolute;
+	top: 50%;
+	margin-top: -7px;
+	right: 34px;
+	cursor: pointer;
+	@media (max-width: @screen-xs-max) {
+		right: 15px;
+	}
+	&:before {
+		position: absolute;
+		display: block;
+		content: '';
+		top: 0;
+		bottom: 0;
+		width: 3px;
+		left: 50%;
+		margin-left: -2px;
+		background: #55b1ff;
+		transition: opacity 0.5s ease;
+		// opacity: 0;
+		.faq__block.active & {
+			opacity: 0;
+		}
+	}
+	&:after {
+		position: absolute;
+		display: block;
+		content: '';
+		left: 0;
+		right: 0;
+		height: 3px;
+		// top: 50%;
+		margin-top: 6px;
+		background: #55b1ff;
+		transition: opacity 0.5s ease;
+	}
+}
+
+/*=====  End of faq  ======*/

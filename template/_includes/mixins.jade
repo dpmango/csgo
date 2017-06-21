@@ -1,0 +1,20 @@
+//- mixin breadcrumb(list)
+//- 	.breadcrumb-wrap
+//- 		ol.list_float.breadcrumb
+//- 			- for(label in list)
+//- 				- if(list[label] === "")
+//- 					li(itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb")
+//- 						span(itemprop="title") !{label}
+//- 				- else
+//- 					li(itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb")
+//- 						a(href="#{list[label]}" itemprop="url") 
+//- 							span(itemprop="title") !{label}
+
+//- // breadcrump start
+//- - var breadcrumbList = {'Главная' : '#', 'Для мальчиков' : '#', 'Одежда' : '#', 'Куртки' : '#', 'Куртка Primigi' : ''}
+//- +breadcrumb(breadcrumbList)
+//- // breadcrump end
+
+mixin icon(id)
+	svg.svg-icon(class=id)
+		use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href='#'+id)

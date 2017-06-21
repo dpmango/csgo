@@ -1,0 +1,186 @@
+/*=            all imports            =
+===================================*/
+// css
+// @import "css/animate.less";
+
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+// Reset and dependencies
+@import "bootstrap/normalize.less";
+// @import "bootstrap/print.less";
+// @import "bootstrap/glyphicons.less";
+
+// Core CSS
+@import "bootstrap/scaffolding.less";
+@import "bootstrap/type.less";
+// @import "bootstrap/code.less";
+@import "bootstrap/grid.less";
+
+@import "bootstrap/tables.less";
+@import "bootstrap/forms.less";
+// @import "bootstrap/buttons.less";
+
+// Components
+// @import "bootstrap/component-animations.less";
+// @import "bootstrap/dropdowns.less";
+// @import "bootstrap/button-groups.less";
+// @import "bootstrap/input-groups.less";
+// @import "bootstrap/navs.less";
+// @import "bootstrap/navbar.less";
+// @import "bootstrap/breadcrumbs.less";
+// @import "bootstrap/pagination.less";
+// @import "bootstrap/pager.less";
+// @import "bootstrap/labels.less";
+// @import "bootstrap/badges.less";
+// @import "bootstrap/jumbotron.less";
+// @import "bootstrap/thumbnails.less";
+// @import "bootstrap/alerts.less";
+// @import "bootstrap/progress-bars.less";
+// @import "bootstrap/media.less";
+// @import "bootstrap/list-group.less";
+// @import "bootstrap/panels.less";
+// @import "bootstrap/responsive-embed.less";
+// @import "bootstrap/wells.less";
+// @import "bootstrap/close.less";
+
+// Components w/ JavaScript
+@import "bootstrap/modals.less";
+// @import "bootstrap/tooltip.less";
+// @import "bootstrap/popovers.less";
+@import "bootstrap/carousel.less";
+
+// Utility classes
+@import "bootstrap/utilities.less";
+@import "bootstrap/responsive-utilities.less";
+
+//variables
+@import "_includes/variables.less";
+/*=====  End of all imports  ======*/
+
+
+/*=======================================
+=            colors variable            =
+=======================================*/
+
+@bdColor: #ccc;
+@black: #010101;
+/*=====  End of colors variable  ======*/
+
+
+
+
+
+
+*{
+	outline: none !important;
+	font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+	font-family: 'Open Sans', sans-serif;
+
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	height: auto;
+	min-height: 100%;
+	@media ( max-width: @screen-sm-max) {
+		background-color: #f0f8fc;
+	}
+}
+
+.tU{
+	text-transform: uppercase;
+}
+
+.project-pages-block{
+
+}
+.prjct-pgs__header{
+	text-align: center;
+	> .container{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid @bdColor;
+	}
+}
+.icon-logo{
+
+}
+.prjct-pgs__body{
+	padding-top: 10px;
+}
+.prjct-pgs__ttl{
+
+}
+.prjct-pgs__group{
+
+}
+.prjct-pgs__link{
+    position: relative;
+    display: block;
+    padding: 10px 10px 10px 40px;
+    color: @black;
+    // background: #f3f3f3;
+    // border-bottom: 1px solid #e6e6e6;
+    text-decoration: none !important;
+    &:hover{
+	    color: @black;
+        background-color: #f1f1f1;
+    }
+}
+.prjct-pgs__ttl{
+
+}
+.prjct-pgs__count{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 30px;
+	text-align: center;
+	line-height: 40px;
+	color: #000;
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		// background-color: #ccc;
+		// transform: rotate(45deg);
+		z-index: 0;
+	}
+	> span{
+		position: relative;
+		z-index: 1;
+	}
+}
+.prjct-pgs__group{
+	padding-top: 10px;
+}
+body{
+	padding-bottom: 100px;
+}
+.prjct-pgs__footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 1;
+	background-color: #fff;
+	> .container{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-top: 1px solid @bdColor;
+	}
+}

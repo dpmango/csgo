@@ -1,0 +1,72 @@
+mixin sidebar(data)
+	a(href="#").sidebar-over
+	.sidebar
+		a(href="#").sidebar__trigger
+			span
+			span
+			span
+		.sidebar__inn.js-scroll
+			.sidebar__logo
+				a(href="#") CS:GO
+			.sidebar__login
+				.sidebar__login__txt
+					span Пожалуйста, авторизируйтесь для просмотра профиля
+				.sidebar__login__btn
+					button.btn.btn-gray.fw-btn#loginBtn
+						span.btn-gray__topleft
+						span.btn-gray__bottomright
+						i.zmdi.zmdi-steam
+						| Войти через Steam
+			.sidebar__user
+				.sidebar__user__top
+					a(href="#").sidebar__user__avatar.ofit-block
+						img(src="img/content/sidebar-user.jpg", alt="")
+					.sidebar__user__name
+						a(href="#") Игорь Николаев
+					a(href="#").sidebar__user__logout#logoutBtn
+						span
+						span
+						span
+						i.zmdi.zmdi-long-arrow-right
+					.sidebar__user__balance
+						span Баланс
+							b 
+								span.__balanse-num(data-balance="14000")#userBalance 14 000
+								i ₽
+								.__balanse-num__change
+						a(href="#balanceModal" data-toggle="modal").sidebar__user__balance__plus
+				.sidebar__user__lvl(data-level="5" data-from="0.000" data-to="9.000" data-current="4.050")
+					.sidebar__lvl__num 5
+					.sidebar__lvl__progress
+						.sidebar__lvl__progress__inn(style="width: 45%;")
+					.sidebar__user__lvl__txt.clearfix
+						.sidebar__lvl__txt__left: span Next lvl
+						.sidebar__lvl__txt__right: span 4.050/9.000
+			.sidebar__stats
+				.sidebar__stats__line
+					.sidebar__stats__line__num
+						span 2 698
+					.sidebar__stats__line__txt
+						span пользователей онлайн
+				.sidebar__stats__line
+					.sidebar__stats__line__num
+						span 22 698
+					.sidebar__stats__line__txt
+						span открытых ящиков
+				.sidebar__stats__line
+					.sidebar__stats__line__num
+						span 7 890
+					.sidebar__stats__line__txt
+						span открытых ящиков за 24 часа
+			nav.sidebar__nav
+				ul.reset-list
+					li: a(href="#") Контакты
+					li: a(href="#") Сотрудничество
+					li: a(href="#") Условия
+			.sidebar__soc
+				a(href="#"): i.zmdi.zmdi-steam
+				a(href="#"): i.zmdi.zmdi-twitter
+				a(href="#"): i.zmdi.zmdi-vk
+				a(href="#"): i.zmdi.zmdi-email
+
+

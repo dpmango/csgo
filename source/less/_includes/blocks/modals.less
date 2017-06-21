@@ -1,0 +1,160 @@
+/*==============================
+=            modals            =
+==============================*/
+
+.modal.fade.modal-scale .modal-dialog {
+    transform: scale(0.75);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.modal.fade.in.modal-scale .modal-dialog {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-content {
+	border: 0;
+	border-radius: 0;
+	background-image: url(../img/template/body-bg.jpg);
+	background-repeat: repeat;
+	background-position: top center;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	position: relative;
+}
+
+.modal-dialog {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.balance-modal {
+	.modal-dialog {
+		width: auto;
+		max-width: 400px;
+	}
+	.modal-content {
+		padding: 50px;
+		@media (max-width: 449px) {
+			padding: 30px;
+		}
+	}
+}
+
+.modal__close {
+	display: block;
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	width: 14px;
+	height: 14px;
+	// background: red;
+	overflow: hidden;
+	transform: rotate(0deg); 
+	color: #2f3438 !important;
+	&:hover {
+		color: #55b1ff !important;
+	}
+	&:before {
+		display: block;
+		content: '';
+		position: absolute;
+		width: 30px;
+		height: 2px;
+		background: currentColor;
+		top: 50%;
+		left: 50%;
+		margin-top: -1px;
+		margin-left: -15px;
+		transform: rotate(45deg); 
+	}
+	&:after {
+		display: block;
+		content: '';
+		position: absolute;
+		width: 30px;
+		height: 2px;
+		background: currentColor;
+		top: 50%;
+		left: 50%;
+		margin-top: -1px;
+		margin-left: -15px;
+		transform: rotate(-45deg); 
+	}
+}
+
+.balance-modal__logo {
+	text-align: center;
+	color: #55b1ff;
+	font-size: 14px;
+	font-weight: 900;
+	margin-top: -4px;
+}
+
+.balance-modal__title {
+	text-align: center;
+	margin-top: 1px;
+}
+
+.balance-modal__title {
+	text-align: center;
+	color: #333;
+	font-family: "Oswald";
+	font-size: 31px;
+	font-weight: 300;
+	text-transform: uppercase;
+	margin-top: 3px;
+}
+
+.balance-modal__form {
+	max-width: 220px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 32px;
+	input {
+		width: 100%;
+		height: 50px;
+		background: #fff;
+		border: 1px solid #d5d6d8;
+		border-radius: 0;
+		font-size: 14px;
+		font-weight: 300;
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+	input::-webkit-input-placeholder {
+	    color: #a2a3a4;
+	    transition: opacity 0.5s ease;
+	}
+	input:-moz-placeholder {
+	    color: #a2a3a4;
+	    transition: opacity 0.5s ease;
+	}
+	input::-moz-placeholder {
+	    color: #a2a3a4;
+	    transition: opacity 0.5s ease;
+	}
+	input:-ms-input-placeholder {
+	    color: #a2a3a4;
+	    transition: opacity 0.5s ease;
+	}
+	input:focus::-webkit-input-placeholder {
+	    opacity: 0;
+	}
+	input:focus:-moz-placeholder {
+	    opacity: 0;
+	}
+	input:focus::-moz-placeholder {
+	    opacity: 0;
+	}
+	input:focus:-ms-input-placeholder {
+	    opacity: 0;
+	}
+	button.btn {
+		margin-top: 23px;
+		text-transform: uppercase;
+	}
+}
+
+/*=====  End of modals  ======*/
+

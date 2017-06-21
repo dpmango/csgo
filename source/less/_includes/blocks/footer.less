@@ -1,0 +1,117 @@
+/*==============================
+=            footer            =
+==============================*/
+
+.footer-wrap {
+	background: #181e22;
+	padding-left: 75px;
+	padding-right: 75px;
+	margin-left: -75px;
+	margin-right: -75px;
+	@media (max-width: 1699px) {
+		padding-left: 50px;
+		padding-right: 50px;
+		margin-left: -50px;
+		margin-right: -50px;
+	}
+	@media (max-width: 1599px) {
+		padding-left: 40px;
+		padding-right: 40px;
+		margin-left: -40px;
+		margin-right: -40px;
+	}
+	@media (max-width: 1199px) {
+		padding-left: 30px;
+		padding-right: 30px;
+		margin-left: -30px;
+		margin-right: -30px;
+	}
+	@media (max-width: 899px) {
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+}
+
+footer.footer {
+	padding-top: 48px;
+	padding-bottom: 43px;
+	position: relative;
+	@media (max-width: @screen-xs-max) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	@media (max-width: 599px) {
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+}
+
+.footer__left {
+	float: left;
+	position: relative;
+	z-index: 2;
+	a {
+		color: #55b1ff !important;
+		font-size: 26px;
+		font-weight: 900;
+		transition: text-shadow 0.5s ease;
+		&:hover {
+		    text-shadow: 0 0 11.7px rgba(85, 177, 255, 0.5);
+		}
+	}
+	@media (max-width: 599px) {
+		float: none;
+		text-align: center;
+	}
+}
+
+.footer__right {
+	float: right;
+	margin-top: 5px;
+	position: relative;
+	z-index: 2;
+	@media (max-width: 599px) {
+		float: none;
+		text-align: center;
+	}
+	a {
+		color: white !important;
+		font-size: 18px;
+		font-weight: 300;
+		letter-spacing: 1px;
+		&:hover {
+			color: #55b1ff !important;
+		}
+	}
+	.zmdi-email {
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: -2px;
+		margin-right: 7px;
+		font-size: 18px;
+	}
+}
+
+.footer__copy {
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	top: 55px;
+	z-index: 1;
+	color: #a2a3a4;
+	font-size: 14px;
+	font-weight: 300;
+	@media (max-width: @screen-xs-max) {
+		top: 38px;
+	}
+	@media (max-width: 599px) {
+		position: relative;
+		top: 0;
+		margin-top: 10px;
+	}
+}
+
+/*=====  End of footer  ======*/

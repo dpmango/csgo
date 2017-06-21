@@ -1,0 +1,472 @@
+/*================================
+=            gransmap            =
+================================*/
+
+.gransmap-top {
+	margin-top: 54px;
+	@media (max-width: @screen-xs-max) {
+		margin-top: 40px;
+	}
+}
+
+.gransmap__aside {
+	width: 257px;
+	float: left;
+	margin-top: 2px;
+	@media (max-width: 1399px) {
+		width: 200px;
+	}
+	@media (max-width: 619px) {
+		float: none;
+		width: auto;
+		max-width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 0;
+	}
+}
+
+.gransmap__aside__maps {
+	@media (max-width: 619px) {
+		float: left;
+		width: 50%;
+	}
+	ul {
+		li {
+			& + li {
+				margin-top: 12px;
+			}
+			&.active {
+				a {
+					color: #55b1ff !important;
+					pointer-events: none;
+				}
+			}
+			a {
+				font-size: 18px;
+				font-weight: 500;
+				color: #333 !important;
+				transition: color 0.5s ease;
+				&:hover {
+					color: #55b1ff !important;
+				}
+			}
+		}
+	}
+}
+
+.gransmap__aside__grans {
+	margin-top: 58px;
+	@media (max-width: 619px) {
+		float: left;
+		width: 50%;
+		margin-top: 4px;
+	}
+	ul {
+		li {
+			& + li {
+				margin-top: 28px;
+			}
+			&.active {
+				a {
+					&:after {
+						opacity: 1;
+					}
+					&:before {
+						box-shadow: 0 0 6px 0.3px rgba(85, 177, 255, 0.8);
+					}
+					.svg-icon {
+						color: #59b3ff;
+					}
+				}
+			}
+			a {
+				font-size: 14px;
+				font-weight: 300;
+				color: #1c1d1e !important;
+				position: relative;
+				padding-left: 25px;
+				&:hover {
+					.svg-icon {
+						color: #59b3ff;
+					}
+					&:before {
+						box-shadow: 0 0 6px 0.3px rgba(85, 177, 255, 0.8);
+					}
+				}
+				&:before {
+					display: block;
+					content: '';
+					position: absolute;
+					left: 1px;
+					top: 50%;
+					margin-top: -7px;
+					width: 14px;
+					height: 14px;
+					border-radius: 50%;
+					border: 1px solid #59b3ff;
+					transition: box-shadow 0.5s ease;
+				}
+				&:after {
+					display: block;
+					content: '';
+					position: absolute;
+					width: 10px;
+					height: 10px;
+					border-radius: 50%;
+					top: 50%;
+					left: 3px;
+					margin-top: -5px;
+					background: #59b3ff;
+					opacity: 0;
+					transition: opacity 0.5s ease;
+				}
+				.svg-icon {
+					display: inline-block;
+					vertical-align: middle;
+					position: relative;
+					margin-right: 7px;
+					transition: color 0.5s ease;
+					color: #c3c5c9;
+				}
+				.cloud-icon {
+					font-size: 19px;
+					top: -1px;
+				}
+				.fire-icon {
+					font-size: 17px;
+					top: -2px;
+				}
+				.explotion-icon {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}
+
+.gransmap__map {
+	position: relative;
+	overflow: hidden;
+	@media (max-width: 619px) {
+		margin-top: 40px;
+	}
+}
+
+.gransmap__map__item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: opacity 0.5s ease, visibility 0.5s ease;
+	&.active {
+		position: relative;
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+}
+
+.gransmap__map__item__img {
+	position: relative;
+	img {
+		max-width: 100%;
+		width: auto;
+		height: auto;
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.gransmap__map__granitem {
+	&.active {
+
+	}
+}
+
+.gransmap__map__granitem__gran {
+	position: absolute;
+	z-index: 2;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	background: #55b1ff;
+	transition: all 0.5s ease;
+	visibility: hidden;
+	pointer-events: none;
+	box-shadow: 0 0 6px 0.3px rgba(85, 177, 255, 0.8);
+	opacity: 0;
+	.gransmap__map__granitem.active & {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+	&:hover, .gransmap__map__granitem.selected & {
+		background: #fff;
+		width: 30px;
+		height: 30px;
+		margin-top: -2px;
+		margin-left: -2px;
+		.svg-icon {
+			color: #55b1ff;
+		}
+		&:before {
+			top: -5px;
+			left: -5px;
+			right: -5px;
+			bottom: -5px;
+			opacity: 0.6;
+		}
+		&:after {
+			top: -10px;
+			left: -10px;
+			right: -10px;
+			bottom: -10px;
+			opacity: 0.3;
+		}
+		& + .gransmap__map__granitem__player {
+			opacity: 1;
+		}
+	}
+	&:before {
+		display: block;
+		content: '';
+		position: absolute;
+		border-radius: 50%;
+		// top: -5px;
+		// left: -5px;
+		// right: -5px;
+		// bottom: -5px;
+		border: 1px solid #55b1ff;
+		// opacity: 0.6;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		transition: all 0.5s ease;
+	}
+	&:after {
+		display: block;
+		content: '';
+		position: absolute;
+		border-radius: 50%;
+		// top: -10px;
+		// left: -10px;
+		// right: -10px;
+		// bottom: -10px;
+		border: 1px solid #55b1ff;
+		// opacity: 0.3;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		transition: all 0.5s ease;
+	}
+	.svg-icon {
+		color: #fff;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -0.5em;
+		margin-left: -0.5em;
+		transition: color 0.5s ease;
+	}
+	.cloud-icon {
+		font-size: 16px;
+	}
+	.fire-icon {
+		font-size: 14px;
+	}
+	.explotion-icon {
+		font-size: 18px;
+	}
+}
+
+.gransmap__map__granitem__player {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	z-index: 2;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	.player-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -0.5em;
+		margin-left: -0.5em;
+		color: #55b1ff;
+		font-size: 30px;
+	}
+}
+
+.gransmap__map__granitem__arrow {
+	width: 18px;
+	height: 70px;
+	// background: rgba(0,0,0,0.5);
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	margin-left: -9px;
+	transform-origin: bottom center;
+	transition: height 1s ease;
+	&:before {
+		position: absolute;
+		display: block;
+		content: '';
+		top: 0;
+		left: 50%;
+		margin-left: -1px;
+		width: 2px;
+		bottom: 22px;
+		border-left: 2px dashed #55b1ff;
+	}
+	span {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 40px;
+		&:before {
+			display: block;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -1px;
+			bottom: 0;
+			width: 2px;
+			background: #55b1ff;
+		}
+		&:after {
+			display: block;
+			content: '';
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			border-top: 2px solid #55b1ff;
+			border-left: 2px solid #55b1ff;
+			transform: rotate(45deg);
+			top: 3px;
+			left: 1px;
+		}
+	}
+}
+
+.gransmap-video {
+	margin-top: 41px;
+}
+
+.gransmap-video__title {
+	font-family: 'Oswald';
+	color: #55b1ff;
+	font-size: 38px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	@media (max-width: @screen-xs-max) {
+		font-size: 28px;
+	}
+}
+
+.gransmap-video__wrap {
+	background: #181e22;
+	position: relative;
+	margin-top: 26px;
+	&:before {
+		display: block;
+		content: '';
+	    padding-bottom: 39.45%;
+	    @media (max-width: @screen-xs-max) {
+	    	padding-bottom: 54.5%;
+	    }
+	}
+}
+
+.gransmap-video__wrap__holder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 0.5s ease, visibility 0.5s ease;
+	.gransmap-video__wrap.active & {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.gransmap-video__wrap__holder__img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+}
+
+.gransmap-video__play {
+	z-index: 2;
+	position: absolute;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	border: 3px solid currentColor;
+	color: #55b1ff !important;
+	top: 50%;
+	left: 50%;
+	margin-top: -32px;
+	margin-left: -32px;
+	transition: color 0.5s ease;
+	&:hover {
+		color: #55b1ff - #111 !important;
+	}
+	&:before {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -15px;
+		margin-left: -9px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 15px 0 15px 26px;
+		border-color: transparent transparent transparent currentColor;
+	}
+}
+
+.gransmap-video__wrap__video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s ease, visibility 0.5s ease;
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.gransmap-video__wrap.active & {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+/*=====  End of gransmap  ======*/

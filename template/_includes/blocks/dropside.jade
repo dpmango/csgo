@@ -1,0 +1,28 @@
+mixin dropside(data)
+	.dropside
+		.dropside__title
+			span Live-drop
+		.dropside__items
+			mixin dropside__item(color)
+				a(href="#" class=color).dropside__item
+					.dropside__item__img
+						img(src="img/content/dropside-item.png", alt="")
+					.dropside__item__name
+						span M4A4 
+					.dropside__item__subname
+						span Buzzkill
+					.dropside__item__over
+						.dropside__item__avatar.ofit-block
+							img(src="img/content/sidebar-user.jpg", alt="")
+						.dropside__item__user
+							span Cape_Code
+
+
+			+dropside__item('__white')
+			+dropside__item('__lightBlue')
+			+dropside__item('__blue')
+			+dropside__item('__purple')
+			+dropside__item('__pink')
+			+dropside__item('__red')
+			+dropside__item('__gold')
+			+dropside__item('__brown')

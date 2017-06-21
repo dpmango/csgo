@@ -1,0 +1,471 @@
+/*=            all imports            =
+===================================*/
+// css
+// @import "css/animate.less";
+
+// icons
+@import "_includes/icon.less";
+// sprites
+
+// Core variables and mixins
+
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+// Reset and dependencies
+@import "bootstrap/normalize.less";
+@import "bootstrap/print.less";
+// @import "bootstrap/glyphicons.less";
+
+// Core CSS
+@import "bootstrap/scaffolding.less";
+@import "bootstrap/type.less";
+@import "bootstrap/code.less";
+@import "bootstrap/grid.less";
+
+@import "bootstrap/tables.less";
+@import "bootstrap/forms.less";
+// @import "bootstrap/buttons.less";
+
+// Components
+@import "bootstrap/component-animations.less";
+@import "bootstrap/dropdowns.less";
+// @import "bootstrap/button-groups.less";
+// @import "bootstrap/input-groups.less";
+// @import "bootstrap/navs.less";
+// @import "bootstrap/navbar.less";
+// @import "bootstrap/breadcrumbs.less";
+// @import "bootstrap/pagination.less";
+// @import "bootstrap/pager.less";
+// @import "bootstrap/labels.less";
+// @import "bootstrap/badges.less";
+// @import "bootstrap/jumbotron.less";
+// @import "bootstrap/thumbnails.less";
+// @import "bootstrap/alerts.less";
+// @import "bootstrap/progress-bars.less";
+// @import "bootstrap/media.less";
+// @import "bootstrap/list-group.less";
+// @import "bootstrap/panels.less";
+// @import "bootstrap/responsive-embed.less";
+// @import "bootstrap/wells.less";
+// @import "bootstrap/close.less";
+
+// Components w/ JavaScript
+@import "bootstrap/modals.less";
+// @import "bootstrap/tooltip.less";
+// @import "bootstrap/popovers.less";
+@import "bootstrap/carousel.less";
+
+// Utility classes
+@import "bootstrap/utilities.less";
+@import "bootstrap/responsive-utilities.less";
+
+
+/*=====  End of all imports  ======*/
+
+
+/*=============================
+=            fonts            =
+=============================*/
+
+.font-face (@fontname, @fontfile, @fontstyle: normal, @fontweight: normal) {
+ @font-face {
+   font-family: @fontname;
+   src: url('../fonts/@{fontfile}.eot');
+   src: url('../fonts/@{fontfile}.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/@{fontfile}.woff') format('woff'),
+      url('../fonts/@{fontfile}.ttf') format('truetype'),
+      url('../fonts/@{fontfile}.svg#@{fontname}') format('svg');
+   font-weight: @fontweight;
+   font-style: @fontstyle;
+ }
+}
+
+.font-face("Roboto", "Roboto-Black", normal, 900);
+.font-face("Roboto", "Roboto-BlackItalic", italic, 900);
+.font-face("Roboto", "Roboto-Bold", normal, 700);
+.font-face("Roboto", "Roboto-BoldItalic", italic, 700);
+.font-face("Roboto", "Roboto-Medium", normal, 500);
+.font-face("Roboto", "Roboto-MediumItalic", italic, 500);
+.font-face("Roboto", "Roboto-Regular", normal, 400);
+.font-face("Roboto", "Roboto-Italic", italic, 400);
+.font-face("Roboto", "Roboto-Light", normal, 300);
+.font-face("Roboto", "Roboto-LightItalic", italic, 300);
+.font-face("Roboto", "Roboto-Thin", normal, 100);
+.font-face("Roboto", "Roboto-ThinItalic", italic, 100);
+
+.font-face("Oswald", "Oswald-Bold", normal, 700);
+.font-face("Oswald", "Oswald-SemiBold", normal, 600);
+.font-face("Oswald", "Oswald-Medium", normal, 500);
+.font-face("Oswald", "Oswald-Regular", normal, 400);
+.font-face("Oswald", "Oswald-Light", normal, 300);
+.font-face("Oswald", "Oswald-ExtraLight", normal, 200);
+
+// .font-face("MyriadPro", 'MyriadPro-Bold', normal, 700);
+
+// font-family: Philosopher;
+
+/*=====  End of fonts  ======*/
+
+/*===============================
+=            buttons            =
+===============================*/
+
+@import "_includes/btns.less";
+
+/*=====  End of buttons  ======*/
+
+
+/*================================
+=            template            =
+================================*/
+
+
+* {
+	outline: 0 !important;
+}
+
+img{
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	min-height: 100%;
+	height: 100%;
+	background-image: url(../img/template/body-bg.jpg);
+	background-repeat: repeat;
+	background-position: top center;
+	font-family: "Roboto";
+	@media (max-width: @screen-md-max) {}
+	@media (max-width: @screen-sm-max) {
+		&.touch-device {
+			cursor: pointer;
+		}
+	}
+	@media (max-width: @screen-xs-max) {}
+}
+
+a {
+	text-decoration: none !important;
+	transition: color 0.5s ease;
+}
+
+.clearfix {
+	&:before, &:after {
+		width: 100%;
+	}
+}
+
+.page-wrapp {
+	overflow: hidden;
+	position: relative;
+	min-height: 100vh;
+	overflow: hidden;
+
+	width: 1920px;
+}
+
+.bootstrap-select {
+	position: relative;
+}
+
+h1, h2, h3, h4, h5 {
+	display: block;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+a, input, button, textarea {
+	outline: 0 !important;
+}
+
+label.error-input {
+	display: none !important;
+}
+
+label {
+	margin-bottom: 0;
+	font-weight: 400;
+}
+
+.hidden-input {
+    position: absolute !important;
+    display: block !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    outline: none !important;
+    background: none !important;
+    border-style: solid !important;
+    border-color: transparent !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.ofit-block {
+	position: relative;
+	> img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 0;
+	}
+	.no-objectfit & {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		> img {
+			display: none !important;
+		}
+	}
+}
+
+.svg-icon {
+	display: inline-block;
+	vertical-align: top;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+ul.reset-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+p {
+	margin: 0;
+	padding: 0;
+}
+
+.tab-pane {
+	display: none;
+	&.active {
+		display: block;
+	}
+}
+
+/*=====  End of template  ======*/
+
+/*===============================
+=            sprites            =
+===============================*/
+
+@import '../../www/img/template/sprites.less';
+
+.madvi1-icon {
+	.sprite(@madvi1);
+}
+.madvi2-icon {
+	.sprite(@madvi2);
+}
+.madvi3-icon {
+	.sprite(@madvi3);
+}
+
+/*=====  End of sprites  ======*/
+
+
+/*====================================
+=            slick slider            =
+====================================*/
+
+@import "_includes/plugins/slick.less";
+
+// .slick-disabled {
+// 	display: none !important;
+// }
+
+/*=====  End of slick slider  ======*/
+
+
+/*===============================
+=            blueimp            =
+===============================*/
+
+// @import "_includes/plugins/blueimp-gallery.min.less";
+
+// .blueimp-gallery, .blueimp-gallery > .slides > .slide > .slide-content {
+//     transition: opacity 0.3s ease;
+// }
+
+// .blueimp-gallery {
+// 	background: rgba(0, 0, 0, 0.9);
+// }
+
+// .blueimp-gallery > .prev {
+// 	transition: opacity 0.3s ease;
+// 	&:before {
+// 		display: block;
+// 		content: '';
+// 		position: absolute;
+// 		width: 20px;
+// 		height: 20px;
+// 		border-top: 2px solid #fff;
+// 		border-left: 2px solid #fff;
+// 		top: 10px;
+// 		left: 13px;
+// 		transform: rotate(-45deg);
+// 	}
+// }
+// .blueimp-gallery > .next{
+// 	transition: opacity 0.3s ease;
+// 	&:before {
+// 		display: block;
+// 		content: '';
+// 		position: absolute;
+// 		width: 20px;
+// 		height: 20px;
+// 		border-top: 2px solid #fff;
+// 		border-left: 2px solid #fff;
+// 		top: 10px;
+// 		left: 6px;
+// 		transform: rotate(135deg);
+// 	}
+// }
+
+// .blueimp-gallery > .close {
+// 	padding: 0 !important;
+// 	margin: 0 !important;
+// 	width: 30px;
+// 	height: 30px;
+// 	opacity: 0.5;
+// 	transition: opacity 0.3s ease;
+// 	&:hover {
+// 		opacity: 1;
+// 	}
+// 	&:before {
+// 		display: block;
+// 		content: '';
+// 		position: absolute;
+// 		top: 50%;
+// 		left: 50%;
+// 		width: 22px;
+// 		height: 2px;
+// 		background: #fff;
+// 		margin-top: -1px;
+// 		margin-left: -11px;
+// 		transform: rotate(45deg); 
+// 	}
+// 	&:after {
+// 		display: block;
+// 		content: '';
+// 		position: absolute;
+// 		top: 50%;
+// 		left: 50%;
+// 		width: 22px;
+// 		height: 2px;
+// 		background: #fff;
+// 		margin-top: -1px;
+// 		margin-left: -11px;
+// 		transform: rotate(-45deg); 
+// 	}
+// }
+
+/*=====  End of blueimp  ======*/
+
+
+/*======================================
+=            perfect scroll            =
+======================================*/
+
+@import "_includes/plugins/perfect-scrollbar.min.less";
+
+/*=====  End of perfect scroll  ======*/
+
+/*====================================
+=            selectpicker            =
+====================================*/
+
+@import "_includes/plugins/bselect/bootstrap-select.less";
+
+/*=====  End of selectpicker  ======*/
+
+/*==================================
+=            font icons            =
+==================================*/
+
+@import "_includes/plugins/material-design-iconic-font.less";
+
+/*=====  End of font icons  ======*/
+
+
+@import "_includes/blocks/sidebar.less";
+@import "_includes/blocks/dropside.less";
+
+.page-content {
+	margin-left: 354px;
+	margin-right: 202px;
+	padding-left: 75px;
+	padding-right: 75px;
+	@media (max-width: 1699px) {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+	@media (max-width: 1599px) {
+		margin-left: 300px;
+		margin-right: 180px;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	@media (max-width: 1199px) {
+		margin-left: 280px;
+		margin-right: 0;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	@media (max-width: 899px) {
+		margin-left: 0;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+.content-without-footer {
+	padding-bottom: 60px;
+	// min-height: calc(~"100vh - 128px");
+	// @media (max-width: @screen-xs-max) {
+	// 	padding-bottom: 40px;
+	// 	min-height: calc(~"100vh - 97px");
+	// }
+	// @media (max-width: 599px) {
+	// 	min-height: calc(~"100vh - 147px");
+	// }
+}
+
+.container {
+	width: auto;
+	max-width: 1214px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@import "_includes/blocks/nav.less";
+@import "_includes/blocks/mainCases.less";
+@import "_includes/blocks/mainAdvs.less";
+@import "_includes/blocks/footer.less";
+@import "_includes/blocks/faq.less";
+@import "_includes/blocks/casepage.less";
+@import "_includes/blocks/modals.less";
+@import "_includes/blocks/gransmap.less";
+@import "_includes/blocks/profile.less";
+
+/*=====  End of blocks  ======*/	

@@ -1,0 +1,80 @@
+/*================================
+=            mainAdvs            =
+================================*/
+
+.mainAdvs {
+	padding-top: 54px;
+	padding-bottom: 103px;
+	border-bottom: 1px solid #12171a;
+	@media (max-width: @screen-xs-max) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}
+
+.mainAdvs__title {
+	text-align: center;
+	font-family: "Oswald";
+	color: white;
+	text-transform: uppercase;
+	font-size: 31px;
+	font-weight: 300;
+}
+
+.mainAdvs__cnt {
+	margin-top: 46px;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+.mainAdvs__col {
+	float: left;
+	width: 33.3333%;
+	padding-left: 20px;
+	padding-right: 20px;
+	@media (max-width: 599px) {
+		float: none;
+		width: auto;
+		& + .mainAdvs__col {
+			margin-top: 25px;
+		}
+	}
+}
+
+.mainAdvs__it {
+	max-width: 270px;
+	margin-left: auto;
+	margin-right: auto;
+	@media (max-width: 599px) {
+		max-width: 400px;
+	}
+}
+
+.mainAdvs__it__icon {
+	height: 69px;
+	// background: red;
+	text-align: center;
+}
+
+.mainAdvs__it__title {
+	text-align: center;
+	color: white;
+	font-size: 26px;
+	font-weight: 400;
+	margin-top: 13px;
+}
+
+.mainAdvs__it__txt {
+	margin-top: 1px;
+	color: white;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 27px;
+	text-align: center;
+	@media (max-width: 1299px) {
+		font-size: 16px;
+		line-height: 24px;
+	}
+}
+
+/*=====  End of mainAdvs  ======*/

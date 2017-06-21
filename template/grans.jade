@@ -1,0 +1,32 @@
+include _includes/mixins
+doctype html
+html(lang='ru')
+	- var title = 'CS:GO - Главная';
+	include _includes/head.jade
+
+	body
+		include _includes/svg.jade
+		include _includes/blocks/sidebar.jade
+		include _includes/blocks/dropside.jade
+		include _includes/blocks/nav.jade
+		include _includes/blocks/footer.jade
+		include _includes/blocks/modals.jade
+		include _includes/blocks/gransmap.jade
+
+		.page-wrapp
+			+sidebar()
+			+dropside()
+			.page-content
+				.content-without-footer
+					.container
+						+nav(2)
+						+gransmap()
+
+				.footer-wrap
+					.container
+						+footer()
+
+		+modals()
+
+		// scripts
+		include _includes/scripts.jade

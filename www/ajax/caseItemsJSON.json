@@ -1,0 +1,92 @@
+{
+	"items": [
+		{
+			"id": "1",
+			"color": "__white",
+			"name": "M4A4",
+			"subname": "Buzzkill",
+			"img": "img/content/case-rotator-img.png",
+			"price": "5000"
+		},
+		{
+			"id": "2",
+			"color": "__lightBlue",
+			"name": "M4A4",
+			"subname": "Buzzkill",
+			"img": "img/content/case-rotator-img.png",
+			"price": "5000"
+		},
+		{
+			"id": "3",
+			"color": "__blue",
+			"name": "M4A4",
+			"subname": "Buzzkill",
+			"img": "img/content/case-rotator-img.png",
+			"price": "5000"
+		},
+		{
+			"id": "4",
+			"color": "__purple",
+			"name": "M4A4",
+			"subname": "Buzzkill",
+			"img": "img/content/case-rotator-img.png",
+			"price": "5000"
+		},
+		{
+			"id": "5",
+			"color": "__pink",
+			"name": "M4A4",
+			"subname": "Buzzkill",
+			"img": "img/content/case-rotator-img.png",
+			"price": "5000"
+		},
+		{
+			"id": "6",
+			"color": "__red",
+			"name": "M4A4",
+			"subname": "Buzzkill",
+			"img": "img/content/case-rotator-img.png",
+			"price": "5000"
+		},
+		{
+			"id": "7",
+			"color": "__gold",
+			"name": "M4A4",
+			"subname": "Buzzkill",
+			"img": "img/content/case-rotator-img.png",
+			"price": "5000"
+		},
+		{
+			"id": "8",
+			"color": "__brown",
+			"name": "M4A4",
+			"subname": "Buzzkill",
+			"img": "img/content/case-rotator-img.png",
+			"price": "5000"
+		},
+		{
+			"id": "9",
+			"color": "__white",
+			"name": "M4A4",
+			"subname": "Buzzkill",
+			"img": "img/content/case-rotator-img.png",
+			"price": "5000"
+		},
+		{
+			"id": "10",
+			"color": "__pink",
+			"name": "M4A4",
+			"subname": "Buzzkill",
+			"img": "img/content/case-rotator-img.png",
+			"price": "5000"
+		},
+		{
+			"id": "11",
+			"color": "__purple",
+			"name": "M4A4",
+			"subname": "Buzzkill",
+			"img": "img/content/case-rotator-img.png",
+			"price": "5000"
+		}
+	]
+}

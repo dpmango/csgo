@@ -1,0 +1,197 @@
+/*================================
+=            dropside            =
+================================*/
+
+.dropside {
+	position: fixed;
+	z-index: 10;
+	width: 202px;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: #232a30;
+	box-shadow: 0 0 30px 8px rgba(0,0,0,0.4);
+	transform: translateZ(0);
+	backface-visibility: hidden; 
+	@media (max-width: 1599px) {
+		width: 180px;
+	}
+	@media (max-width: 1199px) {
+		display: none;
+	}
+}
+
+.dropside__title {
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	padding-top: 49px;
+	padding-bottom: 37px;
+	color: #55b1ff;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.dropside__items {
+	position: absolute;
+	top: 111px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	// &.ps-container > .ps-scrollbar-y-rail {
+	// 	opacity: 1 !important;
+	// 	width: 2px !important;
+	// 	background-color: #526a80 !important;
+	// 	border-radius: 3px;
+	// 	right: 1px !important;
+	// }
+	// &.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+	// 	width: 4px !important;
+	// 	right: -1px !important;
+	// 	background-color: #2d4559 !important;
+	//     color: #526a80;
+	// 	cursor: pointer !important;
+	//    &:before {
+	// 		display: block;
+	// 		content: '';
+	// 		position: absolute;
+	// 		width: 4px;
+	// 		height: 7px;
+	// 		top: 50%;
+	// 		left: 50%;
+	// 		margin-left: -2px;
+	// 		margin-top: -3px;
+	// 		border-top: 1px solid currentColor;
+	// 		border-bottom: 1px solid currentColor;
+	// 		color: inherit;
+	//    }
+	//    &:after {
+	// 		display: block;
+	// 		content: '';
+	// 		position: absolute;
+	// 		top: 50%;
+	// 		margin-top: 0px;
+	// 		width: 4px;
+	// 		height: 1px;
+	// 		background: currentColor;
+	// 		left: 50%;
+	// 		margin-left: -2px;
+	// 		color: inherit;
+	//    }
+	// }
+	// &.ps-container:hover > .ps-scrollbar-y-rail:hover {
+	// 	background-color: #fff6e1 !important;
+	// }
+	// &.ps-container.ps-in-scrolling > .ps-scrollbar-y-rail {
+	// 	background-color: #fff6e1 !important;
+	// }
+}
+
+.dropside__item {
+	display: block;
+	min-height: 136px;
+	position: relative;
+	border-top: 1px solid #20262c;
+	padding-top: 14px;
+	padding-bottom: 17px;
+	transition: margin-top 0.75s ease;
+	&.__just-added {
+		transition: none;
+	}
+	&.__white {color: #b0b0b0 !important;}
+	&.__lightBlue {color: #6496e1 !important;}
+	&.__blue {color: #4b69cd !important;}
+	&.__purple {color: #8847ff !important;}
+	&.__pink {color: #d32ce6 !important;}
+	&.__red {color: #eb4b4b !important;}
+	&.__gold {color: #caab05 !important;}
+	&.__brown {color: #886a08 !important;}
+	&:before {
+		display: block;
+		content: '';
+		position: absolute;
+		top: -1px;
+		width: 3px;
+		bottom: 0;
+		background: currentColor;
+		color: inherit;
+	}
+}
+
+.dropside__item__img {
+	height: 65px;
+	// background: red;
+	position: relative;
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		max-width: 100%;
+		width: auto;
+		max-height: 100%;
+		height: auto;
+		margin: auto;
+	}
+}
+
+.dropside__item__name {
+	margin-top: -1px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 300;
+	color: white;
+}
+
+.dropside__item__subname {
+	margin-top: 0px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 300;
+	color: #a2a3a4;
+}
+
+.dropside__item__over {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 3px;
+	background: rgba(25, 30, 35, 0.8);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s ease, visibility 0.5s ease;
+	.dropside__item:hover & {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.dropside__item__avatar {
+	width: 51px;
+	height: 51px;
+	border-radius: 50%;
+	border: 2px solid #55b1ff;
+	overflow: hidden;
+	box-shadow: 0 0 11.7px 1.3px rgba(85, 177, 255, 0.5);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.dropside__item__user {
+	padding-left: 15px;
+	padding-right: 15px;
+	text-align: center;
+	color: #55b1ff;
+	font-size: 14px;
+	font-weight: 700;
+	margin-top: 5px;
+}
+
+/*=====  End of dropside  ======*/
