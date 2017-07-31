@@ -25,7 +25,6 @@ summary {
   display: block;
 }
 audio,
-canvas,
 progress,
 video {
   display: inline-block;

@@ -9,21 +9,48 @@ mixin nav(data)
 					i.zmdi.zmdi-menu
 			ul.reset-list
 				if (data == 1)
-					li.active: a(href="#"): span Кейсы
+					li.active: a(href="#")
+						span Кейсы
+						span.btn-gray__topleft
+						span.btn-gray__bottomright
 				else
-					li: a(href="#"): span Кейсы
+					li: a(href="#")
+						span Кейсы
+						span.btn-gray__topleft
+						span.btn-gray__bottomright
+
 				if (data == 2)
-					li.active: a(href="#"): span Гранаты
+					li.active: a(href="#")
+						span Гранаты
+						span.btn-gray__topleft
+						span.btn-gray__bottomright
 				else
-					li: a(href="#"): span Гранаты
+					li: a(href="#")
+						span Гранаты
+						span.btn-gray__topleft
+						span.btn-gray__bottomright
+
 				if (data == 3)
-					li.active: a(href="#"): span FAQ
+					li.active: a(href="#")
+						span FAQ
+						span.btn-gray__topleft
+						span.btn-gray__bottomright
 				else
-					li: a(href="#"): span FAQ
+					li: a(href="#")
+						span FAQ
+						span.btn-gray__topleft
+						span.btn-gray__bottomright
+
 				if (data == 4)
-					li.active: a(href="#"): span Поддержка
+					li.active: a(href="#")
+						span Поддержка
+						span.btn-gray__topleft
+						span.btn-gray__bottomright
 				else
-					li: a(href="#"): span Поддержка
+					li: a(href="#")
+						span Поддержка
+						span.btn-gray__topleft
+						span.btn-gray__bottomright
 		.nav__lang
 			a(href="#").active RU
 			| /

@@ -1,0 +1,29 @@
+extends layout/main.jade
+block body
+    body
+        include _includes/svg.jade
+        include _includes/blocks/admin_sidebar.jade
+        include _includes/blocks/dropside.jade
+        include _includes/blocks/nav.jade
+        include _includes/blocks/footer.jade
+        include _includes/blocks/admin_profile.jade
+        include _includes/blocks/modals.jade
+
+        .page-wrapp
+            +admin_sidebar()
+            +dropside()
+            .page-content
+                .content-without-footer
+                    .container
+                        +nav()
+                        +admin_profile()
+                .footer-wrap
+                    .container
+                        +footer()
+
+
+
+        +modals()
+
+        // scripts
+        script(data-main="js/main" src='js/require.js')

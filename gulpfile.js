@@ -387,12 +387,20 @@ gulp.task('setWatch', function() {
     global.isWatching = true;
 });
 // ftp-deploy-watch
+// gulp.task('watch', ['setWatch', 'jade', 'less'], function() {
+//     gulp.watch('source/less/**/*.less', ['less']);
+//     gulp.watch('www/css/concat/*.css', ['autoprefixertask']);
+//     gulp.watch('template/**/*.jade', ['jade']);
+//     gulp.watch('www/js/vendor/*.js', ['jsConcatVendor']);
+//     gulp.watch('www/js/common/*.js', ['jsConcatCommon']);
+// });
+
 gulp.task('watch', ['setWatch', 'jade', 'less'], function() {
     gulp.watch('source/less/**/*.less', ['less']);
     gulp.watch('www/css/concat/*.css', ['autoprefixertask']);
-    gulp.watch('template/**/*.jade', ['jade']); 
-    gulp.watch('www/js/vendor/*.js', ['jsConcatVendor']); 
-    gulp.watch('www/js/common/*.js', ['jsConcatCommon']); 
+    gulp.watch('template/**/*.jade', ['jade']);
+    //gulp.watch('www/js/vendor/*.js', ['jsConcatVendor']);
+    //gulp.watch('www/js/common/*.js', ['jsConcatCommon']);
 });
 
 /*=====  End of watch  ======*/
@@ -401,7 +409,8 @@ gulp.task('watch', ['setWatch', 'jade', 'less'], function() {
 =            default            =
 ===============================*/
 
-gulp.task('default', ['connect', 'watch', 'jsConcatVendor', 'jsConcatCommon']);
+//gulp.task('default', ['connect', 'watch', 'jsConcatVendor', 'jsConcatCommon']);
+gulp.task('default', ['connect', 'watch']);
 
 /*=====  End of default  ======*/
 

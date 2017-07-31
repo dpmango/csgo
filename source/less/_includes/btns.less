@@ -13,6 +13,7 @@
 	text-decoration: none !important;
 	outline: 0 !important;
 	cursor: pointer;
+	//vertical-align: middle;
 }
 
 .fw-btn {
@@ -217,6 +218,8 @@
 	}
 }
 
+
+
 .btn-lblue {
 	height: 50px;
 	background: #eef7fd;
@@ -230,6 +233,43 @@
 	padding-right: 15px;
 	&:hover {
 		background: #e1f1fd;
+	}
+}
+
+.btn-contract {
+	filter: grayscale(2);
+	color: #a2a3a4 !important;
+}
+
+.b-btn {
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 500;
+	@media (max-width: 700px) {
+		padding: 0 10px;
+	}
+}
+
+
+.btn-action{
+	margin: 0 12px;
+	font-size: 18px;
+	color: #c3c5c9;
+	-webkit-transition: color 0.4s ease-in-out;
+	-o-transition: color 0.4s ease-in-out;
+	-moz-transition: color 0.4s ease-in-out;
+	transition: color 0.4s ease-in-out;
+	&:hover {
+		color: #55b1ff;
+	}
+	@media (max-width: 767px) {
+		margin: 0 4px;
+	}
+}
+
+.btn-destr{
+	&:hover {
+		color: #ff3e3e;
 	}
 }
 

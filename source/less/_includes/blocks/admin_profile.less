@@ -1,0 +1,99 @@
+/*===============================
+=           admin profile            =
+===============================*/
+
+.admin-profile {
+  .profile__search {
+    @media (max-width: 600px) {
+      text-align: center;
+    }
+    button {
+      width: 220px;
+      margin-bottom: 24px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+  }
+  .profile__search__input-block {
+    display: inline-block;
+    position: relative;
+    margin-right: 9px;
+    margin-bottom: 24px;
+    @media (max-width: 600px) {
+      min-width: 100%;
+      margin-right: 0;
+    }
+    i {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #55b1ff;
+      font-size: 23px;
+    }
+    input {
+      padding-left: 59px;
+      min-width: 400px;
+      @media (max-width: 1000px) {
+        min-width: 300px;
+      }
+      @media (max-width: 600px) {
+        min-width: 100%;
+      }
+    }
+  }
+
+
+  .profile__id {
+    margin-bottom: 20px;
+    @media (max-width: 700px) {
+      text-align: center;
+    }
+    a {
+      font-size: 18px;
+      text-decoration: underline !important;
+      font-weight: 500;
+      color: #333333;
+      &:hover {
+        color: #55b1ff;
+      }
+    }
+  }
+
+  .profile__statsbl__cnt{
+    margin-bottom: 34px;
+  }
+  .profile__statsbl_btn{
+    text-align: right;
+    button {
+      width: 270px;
+      max-width: 100%;
+    }
+  }
+
+  .inventar {
+    margin-top: 38px;
+  }
+
+  .inventar .ccolapse__head__left {
+    padding-left: 19px;
+    padding-top: 14px;
+  }
+  .inventar  .ccolapse__head__txt{
+    line-height: 1;
+  }
+  .inventar .ccolapse__cnt {
+    padding-top: 23px;
+    padding-bottom: 2px;
+  }
+  .ccolapse__head__selected{
+    margin-top: 10px;
+  }
+
+  .inventar .promo__cases__col {
+    cursor: default;
+  }
+}
+
+
+/*=====  End of admin profile  ======*/

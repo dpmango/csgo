@@ -1,11 +1,9 @@
 mixin profile(data)
 	.profile
 		.profile__top
-			.profile__top__avatar.ofit-block
-				img(src="img/content/prof-user.jpg", alt="")
-			.profile__top__name
-				span Игорь Николаев
-			.profile__top__lvlline.clearfix
+			.profile__top__photo-lvl.ofit-block
+				.profile__top__avatar
+					img(src="img/content/prof-user.jpg", alt="")
 				.pcase__top__lvl
 					.sidebar__user__lvl(data-level="5" data-from="0.000" data-to="9.000" data-current="4.050")
 						.sidebar__lvl__num 5
@@ -14,34 +12,42 @@ mixin profile(data)
 						.sidebar__user__lvl__txt.clearfix
 							.sidebar__lvl__txt__left: span Next lvl
 							.sidebar__lvl__txt__right: span 4.050/9.000
+			.profile__top__name
+				span Игорь Николаев
+			.profile__top__lvlline.clearfix
+				.pcase__top__balance
+					div
+						.pcase__top__balance__num
+							span 14 000
+								i.js-change-currency ₽
+						.pcase__top__balance__text
+							span Баланс
+						a.sidebar__user__balance__plus(href='#balanceModal' data-toggle='modal')
 				.pcase__top__lvl__cash
 					.pcase__top__lvl__cash__perc
 						span 5%
 					.pcase__top__lvl__cash__text
 						span Текущий кэшбек
-				.pcase__top__balance
-					.pcase__top__balance__num
-						span 14 000
-							i ₽
-					.pcase__top__balance__text
-						span Баланс
-					a.sidebar__user__balance__plus(href='#balanceModal' data-toggle='modal')
-			.profile__refcode
-				.profile__refcode__code
-					span A2DASK3201
-				.profile__refcode__txt
-					span Реферальный код
-				.profile__popover
-					.profile__popover__cnt
-						p Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. 
-			.profile__trade.clearfix
+				.profile__refcode
+					.profile__refcode__cnt
+						.profile__refcode__code
+							span A2DASK3201
+						.profile__refcode__txt
+							span Реферальный код
+						.profile__popover
+							.profile__popover__cnt
+								p
+								| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+								| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+								| словно созданном для таких, как я.
+			form#trade-form.profile__trade.clearfix(onsubmit = 'return validateTrade();' )
 				.profile__trade__input
-					input(type="text" placeholder="Trade Link")
+					input#trade-link(type="text" placeholder="Trade Link")
 					.profile__popover
 						.profile__popover__cnt
 							p Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. 
 				.profile__trade__btn
-					button.btn.btn-lblue.fw-btn
+					button(type="submit").btn.btn-lblue.fw-btn
 						span.btn-gray__topleft
 						span.btn-gray__bottomright
 						| ПОДТВЕРДИТЬ
@@ -52,7 +58,7 @@ mixin profile(data)
 						.profile__statsbl__title
 							span История активности
 						.profile__statsbl__cnt
-							.profile__history.js-scroll
+							.profile__history.js-scroll.blue-scroll.scroll-w7
 								.profile__history__it
 									.profile__history__it__date
 										span 3/02/2017 21:53
@@ -184,3 +190,90 @@ mixin profile(data)
 										span Открыто ящиков
 									.profile__statistic__it__right
 										span 349
+
+
+		mixin simple-case(data)
+			label.promo__cases__col.__simple.flex-case-col
+				input(type="checkbox", name="inventar", value="1", class="hidden")
+				.pcase__itsincase__item.inventar__item.__pink(data-id='4')
+					.inventar__item-top-text
+						| StatTrack
+						span ТМ
+					.pcase__itsincase__item__img.inventar__item-img
+						img(src='img/content/case-rotator-img.png', alt='')
+					.pcase__itsincase__item__name.inventar__item-name
+						span M4A4
+					.pcase__itsincase__item__subname.inventar__item-subname
+						span Buzzkill
+					.pcase__itsincase__item__price.inventar__item-price
+						span 5,5$
+					span.btn-gray__topleft
+					span.btn-gray__bottomright
+
+		form#inventar.inventar
+			.ccolapse.is-collapse
+				.ccolapse__head
+					.ccolapse__head__left
+						.ccolapse__head__txt
+							span Инвентарь
+						.ccolapse__head__left__over
+					.ccolapse__head__selected
+						input(type="checkbox", name="show-selected", id="selected", class="hidden")
+						label.ccolapse__head__selected__text.style-checkbox(for="selected") Показывать выведенные предметы
+				.ccolapse__cnt.inventar__cnt
+					.promo__cases.inventar__cases.flex-cases
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+					.promo__more.text-center
+						button.js-show-more.btn(type="button")
+							span Показать больше инвентаря
+							i
+					.promo_bottom-line.clearfix
+						.promo__bottom-line__cases-data
+							p
+								| Общее количество выделеных предметов:
+								span.js-inventar-count 0
+							p
+								| Общая сумма выделеных предметов:
+								span
+									span.js-inventar-amount 0
+									span.promo__bottom-line__cases-data__currency ₽
+
+						.promo__bottom-line__btns.text-right
+							button.promo__bottom-line__btns__withdraw.js-output.btn.btn-blue(type="button")
+								span.btn-gray__topleft
+								span.btn-gray__bottomright
+								| Вывести
+							button.promo__bottom-line__btns__convert.js-convert.btn.btn-lblue(type="button")
+								span.btn-gray__topleft
+								span.btn-gray__bottomright
+								| конвертировать
+							button.promo__bottom-line__btns__contract.btn.btn-lblue.btn-contract.js-contract-link(type="button")
+								| в контракт
+								span.btn-gray__topleft
+								span.btn-gray__bottomright
+
+
+

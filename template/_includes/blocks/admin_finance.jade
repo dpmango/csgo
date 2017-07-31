@@ -1,0 +1,196 @@
+mixin admin_finance(data)
+    .finance
+        .finance-data.clearfix
+            .finance-data__block
+                .finance-data__value
+                    | 109 678
+                    span.finance-data__currency ₽
+                .finance-data__desc в кошельке CS:GO
+            .finance-data__block
+                .finance-data__value 4 890
+                .finance-data__desc открытых ящиков
+            .finance-data__block
+                .finance-data__value 12 367
+                .finance-data__desc зарегестрированных пользователей
+            .finance-data__block
+                .finance-data__value
+                    | 23 896
+                    span.finance-data__currency ₽
+                .finance-data__desc остаток на счетах пользователей
+        .finance-graph
+            .finance-graph__top.clearfix
+                p.finance-graph__title заработок за день
+
+                form.finance-graph__period
+                    label.style-radio
+                        | Неделя
+                        input(type="radio", name="earnings_day_period", value="earnings_day_week", checked)
+                    label.style-radio
+                        | Месяц
+                        input(type="radio", name="earnings_day_period", value="earnings_day_month")
+                    label.style-radio
+                        | Год
+                        input(type="radio", name="earnings_day_period", value="earnings_day_year")
+                    label.style-radio
+                        | За все время
+                        input(type="radio", name="earnings_day_period", value="earnings_day_all")
+            .finance-graph__cnt
+                .finance-graph__it.active
+                   #earnings_day_week
+                .finance-graph__it
+                    #earnings_day_month
+                .finance-graph__it
+                    #earnings_day_year
+                .finance-graph__it
+                    #earnings_day_all
+        .finance-graph
+            .finance-graph__top.clearfix
+                p.finance-graph__title Поток средств
+                form.finance-graph__period
+                    label.style-radio
+                        | Неделя
+                        input(type="radio", name="stream_funds_period", value="stream_funds_week", checked)
+                    label.style-radio
+                        | Месяц
+                        input(type="radio", name="stream_funds_period", value="stream_funds_month")
+                    label.style-radio
+                        | Год
+                        input(type="radio", name="stream_funds_period", value="stream_funds_year")
+                    label.style-radio
+                        | За все время
+                        input(type="radio", name="stream_funds_period", value="stream_funds_all")
+            #stream_funds.finance-graph__cnt
+                .finance-graph__it.active
+                    #stream_funds_week
+                .finance-graph__it
+                    #stream_funds_month
+                .finance-graph__it
+                    #stream_funds_year
+                .finance-graph__it
+                    #stream_funds_all
+        .finance-graph
+            .finance-graph__top.clearfix
+                p.finance-graph__title Открыто ящиков
+                form.finance-graph__period
+                    label.style-radio
+                        | Неделя
+                        input(type="radio", name="open_case_period", value="open_case_week", checked)
+                    label.style-radio
+                        | Месяц
+                        input(type="radio", name="open_case_period", value="open_case_month")
+                    label.style-radio
+                        | Год
+                        input(type="radio", name="open_case_period", value="open_case_year")
+                    label.style-radio
+                        | За все время
+                        input(type="radio", name="open_case_period", value="open_case_all")
+            .finance-graph__cnt
+                .finance-graph__it.active
+                    #open_case_week
+                .finance-graph__it
+                    #open_case_month
+                .finance-graph__it
+                    #open_case_year
+                .finance-graph__it
+                    #open_case_all
+        .finance-graph
+            .finance-graph__top.clearfix
+                p.finance-graph__title Открыто ящиков
+                form.finance-graph__period
+                    label.style-radio
+                        | Неделя
+                        input(type="radio", name="open_case1_period", value="open_case1_week", checked)
+                    label.style-radio
+                        | Месяц
+                        input(type="radio", name="open_case1_period", value="open_case1_month")
+                    label.style-radio
+                        | Год
+                        input(type="radio", name="open_case1_period", value="open_case1_year")
+                    label.style-radio
+                        | За все время
+                        input(type="radio", name="open_case1_period", value="open_case1_all")
+            .finance-graph__cnt
+                .finance-graph__it.active
+                    #open_case1_week
+                .finance-graph__it
+                    #open_case1_month
+                .finance-graph__it
+                    #open_case1_year
+                .finance-graph__it
+                    #open_case1_all
+        .finance__statsbl
+            .finance__statsbl__title
+                span Статистика
+            .finance__statsbl__cnt
+                .finance__statistic
+                    .finance__statistic__it
+                        .finance__statistic__it__left
+                            span Открыто ящиков
+                        .finance__statistic__it__right
+                            span 349
+                    .finance__statistic__it
+                        .finance__statistic__it__left
+                            span Открыто ящиков
+                        .finance__statistic__it__right
+                            span 349<i>₽</i>
+                    .finance__statistic__it
+                        .finance__statistic__it__left
+                            span Открыто ящиков
+                        .finance__statistic__it__right
+                            span 349
+                    .finance__statistic__it
+                        .finance__statistic__it__left
+                            span Открыто ящиков
+                        .finance__statistic__it__right
+                            span 349
+                    .finance__statistic__it
+                        .finance__statistic__it__left
+                            span Открыто ящиков
+                        .finance__statistic__it__right
+                            span 349
+        .ccolapse.is-collapse.cases-sales
+            .ccolapse__head
+                .ccolapse__head__left.cases-sales__head__left
+                    .ccolapse__head__txt.cases-sales__head__txt
+                        span продажи кейсов
+                    .ccolapse__head__left__over.cases-sales__head__left__over
+                form#sales-filter.sales-form
+                    label.style-radio
+                        | Неделя
+                        input(type="radio", name="period", value="week", checked)
+                    label.style-radio
+                        | Месяц
+                        input(type="radio", name="period", value="month")
+                    label.style-radio
+                        | Год
+                        input(type="radio", name="period", value="year")
+                    label.sales-form__last-radio.style-radio
+                        | За все время
+                        input(type="radio", name="period", value="all")
+                    .sales-form__select-wrap.select-wrap
+                        select.sales-form__select(name="sort-by")
+                            option(value="opening") По количеству открытий
+                            option(value="sales") По количеству продаж
+                            option(value="profit") По величине прибыли
+            .ccolapse__cnt.cases-sales__cnt
+                .promo__cases.flex-cases
+                    mixin simple-case(data)
+                        .promo__cases__col.__simple.flex-case-col
+                            .promo-case.cases-sales__case
+                                .promo-case__img
+                                    .promo-case__img__case
+                                        img(src="img/content/simple-case.png", alt="")
+                                .promo-case__name.cases-sales__case-name
+                                    span AK-47 Redline
+                                .promo-case__count
+                                    span 20 раз
+                                .promo-case__data
+                                    div
+                                        span открыт 20 раз
+                                        span прибыль 5 700 рублей
+                                span.btn-gray__topleft
+                                span.btn-gray__bottomright
+                    +simple-case()
+                    +simple-case()
+                    +simple-case()
+

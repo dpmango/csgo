@@ -1,0 +1,28 @@
+extends layout/main.jade
+block body
+    body
+        include _includes/svg.jade
+        include _includes/blocks/admin_sidebar.jade
+        include _includes/blocks/dropside.jade
+        include _includes/blocks/nav.jade
+        include _includes/blocks/admin_users.jade
+        include _includes/blocks/mainAdvs.jade
+        include _includes/blocks/footer.jade
+        include _includes/blocks/casepage.jade
+
+        .page-wrapp
+            +admin_sidebar()
+            +dropside()
+            .page-content.main-page
+                .content-without-footer
+                    .container
+                        +nav()
+                        +admin_users()
+                .footer-wrap
+                    .container
+                        +footer()
+
+        //- +modals()
+
+        // scripts
+        script(data-main="js/main" src='js/require.js')

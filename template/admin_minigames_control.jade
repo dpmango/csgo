@@ -1,0 +1,37 @@
+extends layout/main.jade
+append head
+    link(href='#{pathToAssets}/kendo/kendo.default.mobile.min.css', rel='stylesheet')
+    link(href='#{pathToAssets}/kendo/kendo.default.min.css', rel='stylesheet')
+    link(href='#{pathToAssets}/kendo/kendo.rtl.min.css', rel='stylesheet')
+    link(href='#{pathToAssets}/kendo/kendo.common.min.css', rel='stylesheet')
+block body
+    body
+        include _includes/svg.jade
+        include _includes/blocks/admin_sidebar.jade
+        include _includes/blocks/dropside.jade
+        include _includes/blocks/nav.jade
+        include _includes/blocks/footer.jade
+        include _includes/blocks/admin_minigames_control.jade
+        include _includes/blocks/modals.jade
+
+        .page-wrapp
+            +admin_sidebar()
+            +dropside()
+            .page-content
+                .content-without-footer
+                    .container
+                        +nav()
+                        +admin_minigames_control()
+                .footer-wrap
+                    .container
+                        +footer()
+
+        +modals()
+
+
+        //script( src="js/lib/kendo/cultures/kendo.culture.ru-RU.min.js")
+        script(data-main="js/main" src='js/require.js')
+
+
+
+

@@ -1,0 +1,231 @@
+mixin admin_gransmap(data)
+    .gransmap-top.admin-gransmap-top.clearfix
+        .gransmap__aside.clearfix
+            .gransmap__aside__maps.admin-gransmap__aside__maps
+                ul.reset-list
+                    li.active
+                        a(href="#" data-map="map1")
+                            | de_overpass
+                        span.admin-gransmap__action-block
+                            button.admin-gransmap__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                            button.admin-gransmap__delete.btn.btn-action.btn-destr.js-del-map(type="button"): i.zmdi.zmdi-delete
+                    li
+                        a(href="#" data-map="map2")
+                            | de_nuke
+                        span.admin-gransmap__action-block
+                            button.admin-gransmap__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                            button.admin-gransmap__delete.btn.btn-action.btn-destr.js-del-map(type="button"): i.zmdi.zmdi-delete
+                    li
+                        a(href="#" data-map="map3")
+                            | de_overpass
+                        span.admin-gransmap__action-block
+                            button.admin-gransmap__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                            button.admin-gransmap__delete.btn.btn-action.btn-destr.js-del-map(type="button"): i.zmdi.zmdi-delete
+                    li
+                        a(href="#" data-map="map4")
+                            | de_nuke
+                        span.admin-gransmap__action-block
+                            button.admin-gransmap__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                            button.admin-gransmap__delete.btn.btn-action.btn-destr.js-del-map(type="button"): i.zmdi.zmdi-delete
+                    li
+                        a(href="#" data-map="map5")
+                            | de_overpass
+                        span.admin-gransmap__action-block
+                            button.admin-gransmap__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                            button.admin-gransmap__delete.btn.btn-action.btn-destr.js-del-map(type="button"): i.zmdi.zmdi-delete
+                    li
+                        a(href="#" data-map="map6")
+                            | de_nuke
+                        span.admin-gransmap__action-block
+                            button.admin-gransmap__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                            button.admin-gransmap__delete.btn.btn-action.btn-destr.js-del-map(type="button"): i.zmdi.zmdi-delete
+
+
+            form.gransmap__aside__create-map
+                input.create-map__name(type="text", name="map-name", placeholder="Название")
+                .create-map__img.file
+                    input#map-photo(type="file" name="map-photo")
+                    button.create-map__file.file__btn.btn.btn-lblue.b-btn(type="button")
+                        | загрузить изображение
+                        span.btn-gray__topleft
+                        span.btn-gray__bottomright
+                    .file__value
+                button.create-map__btn.btn.btn-blue.b-btn(type="submit")
+                    | Создаать карту
+                    span.btn-gray__topleft
+                    span.btn-gray__bottomright
+
+            .gransmap__aside__create
+                button.gransmap__aside__create__add.js-add-grans.btn.btn-lblue.b-btn(type="button")
+                    | Добавить
+                    span.btn-gray__topleft
+                    span.btn-gray__bottomright
+
+                form#create-grans
+                    p.gransmap__aside__create__title Создать гранату
+                    .gransmap__aside__create__coords.clearfix
+                        label
+                            span X1
+                            input#user-x(type="text", value="")
+                        label
+                            span Y1
+                            input#user-y(type="text", value="")
+                    .gransmap__aside__create__coords.clearfix
+                        label
+                            span X2
+                            input#destenation-x(type="text", value="")
+                        label
+                            span Y2
+                            input#destenation-y(type="text", value="")
+                    .gransmap__aside__create__select-wrap
+                        select#grans-type
+                            option(value="0") Вид гранаты
+                            option(value="smoke", data-icon="cloud-icon") Дымовая
+                            option(value="flash", data-icon="explotion-icon") Ослепительная
+                            option(value="fire", data-icon="fire-icon") Боевая
+
+                    input#youtube-link.gransmap__aside__create__youtube(type="text", placeholder="Youtube link")
+                    button.btn.btn-lblue.b-btn(type="submit")
+                        | создать
+                        span.btn-gray__topleft
+                        span.btn-gray__bottomright
+
+
+
+        mixin gransmap__map__granitem(top1, left1, top2, left2, type, active, video, videoimg)
+            if (active == true)
+                .gransmap__map__granitem.active(data-gran=type, data-video=video, data-videoimg=videoimg)
+                    a(href="#" style="top: #{top1}; left: #{left1};").gransmap__map__granitem__gran
+                        if (type == 'smoke')
+                            +icon('cloud-icon')
+                        if (type == 'fire')
+                            +icon('fire-icon')
+                        if (type == 'flash')
+                            +icon('explotion-icon')
+                    .gransmap__map__granitem__player(style="top: #{top2}; left: #{left2};")
+                        +icon('player-icon')
+                        .gransmap__map__granitem__arrow
+                            span
+            else
+                .gransmap__map__granitem(data-gran=type, data-video=video, data-videoimg=videoimg)
+                    a(href="#" style="top: #{top1}; left: #{left1};").gransmap__map__granitem__gran
+                        if (type == 'smoke')
+                            +icon('cloud-icon')
+                        if (type == 'fire')
+                            +icon('fire-icon')
+                        if (type == 'flash')
+                            +icon('explotion-icon')
+                    .gransmap__map__granitem__player(style="top: #{top2}; left: #{left2};")
+                        +icon('player-icon')
+                        .gransmap__map__granitem__arrow
+                            span
+
+        .gransmap__map
+            .gransmap__map__item.active(data-map="map1")
+                .gransmap__map__item__img.admin-gransmap__img
+                    img.map-img(src="img/content/map1.png", alt="")
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+            .gransmap__map__item(data-map="map2")
+                .gransmap__map__item__img.admin-gransmap__img
+                    img.map-img(src="img/content/map2.png", alt="")
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+            .gransmap__map__item(data-map="map3")
+                .gransmap__map__item__img.admin-gransmap__img
+                    img.map-img(src="img/content/map3.png", alt="")
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+            .gransmap__map__item.active(data-map="map4")
+                .gransmap__map__item__img.admin-gransmap__img
+                    img.map-img(src="img/content/map1.png", alt="")
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+
+            .gransmap__map__item.active(data-map="map5")
+                .gransmap__map__item__img.admin-gransmap__img
+                    img.map-img(src="img/content/map1.png", alt="")
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+            .gransmap__map__item.active(data-map="map6")
+                .gransmap__map__item__img.admin-gransmap__img
+                    img.map-img(src="img/content/map1.png", alt="")
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'smoke', true, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'fire', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+
+                    +gransmap__map__granitem('11.6%', '14.5%', '39%', '18.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('9.6%', '37.5%', '40%', '59.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('62.6%', '34%', '79%', '60.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')
+                    +gransmap__map__granitem('56%', '81.2%', '25%', '88.5%', 'flash', false, 'https://www.youtube.com/embed/erFK-8FJVnU', 'img/content/video-holder-img.jpg')

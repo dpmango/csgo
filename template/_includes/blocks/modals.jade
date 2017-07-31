@@ -4,7 +4,7 @@ mixin modals(data)
 			.modal-content
 				a(href="#" data-dismiss="modal").modal__close
 				.balance-modal__logo
-					span CS:GO
+					img(src="img/template/min-logo.png", alt="CS:GO")
 				.balance-modal__title
 					span Пополнение баланса
 				.balance-modal__form
@@ -14,4 +14,227 @@ mixin modals(data)
 						span.btn-gray__bottomright
 						| Пополнить
 
-    
+	#inventarModal.modal.fade.modal-scale.contract-inventar
+		.modal-dialog.contract-inventar__dialog
+			.modal-content.contract-inventar__content
+				a(href="#" data-dismiss="modal").modal__close.contract-inventar__close
+				.contract-inventar__logo
+					img(src="img/template/min-logo.png", alt="CS:GO")
+				form#contract-inventar.contract-inventar-f
+					.ccolapse.is-collapse
+						.ccolapse__head
+							.ccolapse__head__left.contract-inventar__head__left
+								.ccolapse__head__txt.contract-inventar__head__txt
+									span Инвентарь
+								.ccolapse__head__left__over
+
+						.ccolapse__cnt.contract-inventar__cnt
+							.promo__cases.contract-inventar__cases.clearfix.js-scroll.blue-scroll.scroll-w7
+								mixin simple-case(data)
+									label.promo__cases__col.contract-inventar__cases-col
+										input(type="checkbox", name="inventar", value="1", class="hidden")
+										div.promo-case.contract-inventar__case
+											.promo-case__img.contract-inventar__case-img
+												.promo-case__img__case
+													img(src="img/content/promo-case.png", alt="")
+											.promo-case__name.contract-inventar__case-name
+												span AK-47 Redline
+											.promo-case__price.contract-inventar__case-price
+												span $ 5,5
+											span.btn-gray__topleft
+											span.btn-gray__bottomright
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+								+simple-case()
+					.contract-inventar__submit-block.text-center
+						button.contract-inventar__submit.btn.btn-lblue.b-btn(type="submit")
+							| В контракт
+							span.btn-gray__topleft
+							span.btn-gray__bottomright
+
+	#inventarOutput.modal.fade.modal-scale.inventar-output-modal
+		.modal-dialog
+			.modal-content
+				a(href="#" data-dismiss="modal").modal__close
+				.inventar-output-modal__logo
+					img(src="img/template/min-logo.png", alt="CS:GO")
+				.inventar-output-modal__form
+					.inventar-output-modal__desc
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					.promo__cases.flex-cases
+						mixin promo-case(data)
+							.promo__cases__col.__simple.flex-case-col
+								div.promo-case.__simple.fade-link.flex-case
+									.promo-case__img
+										.promo-case__img__case
+											img(src="img/content/promo-case.png", alt="")
+						+promo-case()
+						+promo-case()
+						+promo-case()
+						+promo-case()
+
+
+					button.inventar-output-modal__submit.btn.btn-lblue.b-btn
+						span.btn-gray__topleft
+						span.btn-gray__bottomright
+						| Хорошо
+
+
+
+	#levelModal.modal.fade.modal-scale.level-modal
+		.modal-dialog
+			.modal-content
+				a(href="#" data-dismiss="modal").modal__close
+				.level-modal__logo
+					img(src="img/template/min-logo.png", alt="CS:GO")
+				.level-modal__title
+					span.lvl__num
+						.sidebar__lvl__num.level-modal__num
+							span.cur-lvl
+							span.next-lvl
+					span.title__text
+						| Поздравляем! Вы получили новый уровень и теперь можете
+						| бесплатно открыть кейс Классический
+				.level-modal__cnt
+					.level-modal__case
+						img(src="img/content/simple-case.png")
+					button.level-modal__go.btn.btn-lblue.b-btn
+						span.btn-gray__topleft
+						span.btn-gray__bottomright
+						| Перейти
+
+	#contactModal.modal.fade.modal-scale.info-modal
+		.modal-dialog
+			.modal-content
+				a.modal__close(href='#', data-dismiss='modal')
+				.info-modal__logo
+					img(src='img/template/min-logo.png', alt='CS:GO')
+				h2.info-modal__title
+					span Контакты
+				.info-modal__cnt.text-cnt
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					p.text-cnt__sub-title  Душа моя озарена неземной радостью
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+
+	#cooperationModal.modal.fade.modal-scale.info-modal
+		.modal-dialog
+			.modal-content
+				a.modal__close(href='#', data-dismiss='modal')
+				.info-modal__logo
+					img(src='img/template/min-logo.png', alt='CS:GO')
+				h2.info-modal__title
+					span Сотрудничество
+				.info-modal__cnt.text-cnt
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					p.text-cnt__sub-title  Душа моя озарена неземной радостью
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+
+	#conditionsModal.modal.fade.modal-scale.info-modal
+		.modal-dialog
+			.modal-content
+				a.modal__close(href='#', data-dismiss='modal')
+				.info-modal__logo
+					img(src='img/template/min-logo.png', alt='CS:GO')
+				h2.info-modal__title
+					span Условия
+				.info-modal__cnt.text-cnt
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					p.text-cnt__sub-title  Душа моя озарена неземной радостью
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+					p
+						| Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+						| я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+						| словно созданном для таких, как я.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
     <link rel="shortcut icon" href="img/template/ico/favicon.ico">
-    <title>CS:GO - FAQ</title>
+    <title>'CS:GO - Profile'</title>
     <!-- custom styles-->
     <link href="css/template.css" rel="stylesheet">
-    <!--if lt IE 9
-    script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
-    script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <!--if lt IE 9script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
     -->
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   </head>
   <body>
     <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -35,7 +35,7 @@
     <div class="page-wrapp"><a href="#" class="sidebar-over"></a>
           <div class="sidebar"><a href="#" class="sidebar__trigger"><span></span><span></span><span></span></a>
             <div class="sidebar__inn js-scroll">
-              <div class="sidebar__logo"><a href="#">CS:GO</a></div>
+              <div class="sidebar__logo"><a href="#"><img src="img/template/logo.png" alt="CS:GO"></a></div>
               <div class="sidebar__login">
                 <div class="sidebar__login__txt"><span>Пожалуйста, авторизируйтесь для просмотра профиля</span></div>
                 <div class="sidebar__login__btn">
@@ -45,7 +45,7 @@
               <div class="sidebar__user">
                 <div class="sidebar__user__top"><a href="#" class="sidebar__user__avatar ofit-block"><img src="img/content/sidebar-user.jpg" alt=""></a>
                   <div class="sidebar__user__name"><a href="#">Игорь Николаев</a></div><a href="#" id="logoutBtn" class="sidebar__user__logout"><span></span><span></span><span></span><i class="zmdi zmdi-long-arrow-right"></i></a>
-                  <div class="sidebar__user__balance"><span>Баланс<b> <span data-balance="14000" id="userBalance" class="__balanse-num">14 000</span><i>₽</i>
+                  <div class="sidebar__user__balance"><span>Баланс<b> <span data-balance="25000" id="userBalance" class="__balanse-num">25 000</span><i>₽</i>
                         <div class="__balanse-num__change"></div></b></span><a href="#balanceModal" data-toggle="modal" class="sidebar__user__balance__plus"></a></div>
                 </div>
                 <div data-level="5" data-from="0.000" data-to="9.000" data-current="4.050" class="sidebar__user__lvl">
@@ -75,9 +75,9 @@
               </div>
               <nav class="sidebar__nav">
                 <ul class="reset-list">
-                  <li><a href="#">Контакты</a></li>
-                  <li><a href="#">Сотрудничество</a></li>
-                  <li><a href="#">Условия</a></li>
+                  <li><a href="#contactModal" data-toggle="modal">Контакты</a></li>
+                  <li><a href="#cooperationModal" data-toggle="modal">Сотрудничество</a></li>
+                  <li><a href="#conditionsModal" data-toggle="modal">Условия</a></li>
                 </ul>
               </nav>
               <div class="sidebar__soc"><a href="#"><i class="zmdi zmdi-steam"></i></a><a href="#"><i class="zmdi zmdi-twitter"></i></a><a href="#"><i class="zmdi zmdi-vk"></i></a><a href="#"><i class="zmdi zmdi-email"></i></a></div>
@@ -153,19 +153,18 @@
                       <button class="btn btn-gray"><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>МЕНЮ<i class="zmdi zmdi-menu"></i></button>
                     </div>
                     <ul class="reset-list">
-                      <li><a href="#"><span>Кейсы</span></a></li>
-                      <li><a href="#"><span>Гранаты</span></a></li>
-                      <li><a href="#"><span>FAQ</span></a></li>
-                      <li><a href="#"><span>Поддержка</span></a></li>
+                      <li><a href="#"><span>Кейсы</span><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span></a></li>
+                      <li><a href="#"><span>Гранаты</span><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span></a></li>
+                      <li><a href="#"><span>FAQ</span><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span></a></li>
+                      <li><a href="#"><span>Поддержка</span><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span></a></li>
                     </ul>
                   </div>
                   <div class="nav__lang"><a href="#" class="active">RU</a>/<a href="#">EN</a></div>
                 </nav>
                 <div class="profile">
                   <div class="profile__top">
-                    <div class="profile__top__avatar ofit-block"><img src="img/content/prof-user.jpg" alt=""></div>
-                    <div class="profile__top__name"><span>Игорь Николаев</span></div>
-                    <div class="profile__top__lvlline clearfix">
+                    <div class="profile__top__photo-lvl ofit-block">
+                      <div class="profile__top__avatar"><img src="img/content/prof-user.jpg" alt=""></div>
                       <div class="pcase__top__lvl">
                         <div data-level="5" data-from="0.000" data-to="9.000" data-current="4.050" class="sidebar__user__lvl">
                           <div class="sidebar__lvl__num">5</div>
@@ -178,27 +177,36 @@
                           </div>
                         </div>
                       </div>
+                    </div>
+                    <div class="profile__top__name"><span>Игорь Николаев</span></div>
+                    <div class="profile__top__lvlline clearfix">
+                      <div class="pcase__top__balance">
+                        <div>
+                          <div class="pcase__top__balance__num"><span>14 000<i class="js-change-currency">₽</i></span></div>
+                          <div class="pcase__top__balance__text"><span>Баланс</span></div><a href="#balanceModal" data-toggle="modal" class="sidebar__user__balance__plus"></a>
+                        </div>
+                      </div>
                       <div class="pcase__top__lvl__cash">
                         <div class="pcase__top__lvl__cash__perc"><span>5%</span></div>
                         <div class="pcase__top__lvl__cash__text"><span>Текущий кэшбек</span></div>
                       </div>
-                      <div class="pcase__top__balance">
-                        <div class="pcase__top__balance__num"><span>14 000<i>₽</i></span></div>
-                        <div class="pcase__top__balance__text"><span>Баланс</span></div><a href="#balanceModal" data-toggle="modal" class="sidebar__user__balance__plus"></a>
-                      </div>
-                    </div>
-                    <div class="profile__refcode">
-                      <div class="profile__refcode__code"><span>A2DASK3201</span></div>
-                      <div class="profile__refcode__txt"><span>Реферальный код</span></div>
-                      <div class="profile__popover">
-                        <div class="profile__popover__cnt">
-                          <p>Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. </p>
+                      <div class="profile__refcode">
+                        <div class="profile__refcode__cnt">
+                          <div class="profile__refcode__code"><span>A2DASK3201</span></div>
+                          <div class="profile__refcode__txt"><span>Реферальный код</span></div>
+                          <div class="profile__popover">
+                            <div class="profile__popover__cnt">
+                              <p></p>Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                              я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                              словно созданном для таких, как я.
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="profile__trade clearfix">
+                    <form id="trade-form" onsubmit="return validateTrade();" class="profile__trade clearfix">
                       <div class="profile__trade__input">
-                        <input type="text" placeholder="Trade Link">
+                        <input id="trade-link" type="text" placeholder="Trade Link">
                         <div class="profile__popover">
                           <div class="profile__popover__cnt">
                             <p>Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. </p>
@@ -206,9 +214,9 @@
                         </div>
                       </div>
                       <div class="profile__trade__btn">
-                        <button class="btn btn-lblue fw-btn"><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>ПОДТВЕРДИТЬ</button>
+                        <button type="submit" class="btn btn-lblue fw-btn"><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>ПОДТВЕРДИТЬ</button>
                       </div>
-                    </div>
+                    </form>
                   </div>
                   <div class="profile__stats">
                     <div class="row">
@@ -216,7 +224,7 @@
                         <div class="profile__statsbl">
                           <div class="profile__statsbl__title"><span>История активности</span></div>
                           <div class="profile__statsbl__cnt">
-                            <div class="profile__history js-scroll">
+                            <div class="profile__history js-scroll blue-scroll scroll-w7">
                               <div class="profile__history__it">
                                 <div class="profile__history__it__date"><span>3/02/2017 21:53</span></div>
                                 <div class="profile__history__it__desc"><span>Открыт UPS-S | Orion (Factory New)  из кейса Operation Phoenix (13 765 рублей)</span></div>
@@ -332,13 +340,285 @@
                       </div>
                     </div>
                   </div>
+                  <form id="inventar" class="inventar">
+                    <div class="ccolapse is-collapse">
+                      <div class="ccolapse__head">
+                        <div class="ccolapse__head__left">
+                          <div class="ccolapse__head__txt"><span>Инвентарь</span></div>
+                          <div class="ccolapse__head__left__over"></div>
+                        </div>
+                        <div class="ccolapse__head__selected">
+                          <input type="checkbox" name="show-selected" id="selected" class="hidden">
+                          <label for="selected" class="ccolapse__head__selected__text style-checkbox">Показывать выведенные предметы</label>
+                        </div>
+                      </div>
+                      <div class="ccolapse__cnt inventar__cnt">
+                        <div class="promo__cases inventar__cases flex-cases">
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                                <label class="promo__cases__col __simple flex-case-col">
+                                  <input type="checkbox" name="inventar" value="1" class="hidden">
+                                  <div data-id="4" class="pcase__itsincase__item inventar__item __pink">
+                                    <div class="inventar__item-top-text">StatTrack<span>ТМ</span></div>
+                                    <div class="pcase__itsincase__item__img inventar__item-img"><img src="img/content/case-rotator-img.png" alt=""></div>
+                                    <div class="pcase__itsincase__item__name inventar__item-name"><span>M4A4</span></div>
+                                    <div class="pcase__itsincase__item__subname inventar__item-subname"><span>Buzzkill</span></div>
+                                    <div class="pcase__itsincase__item__price inventar__item-price"><span>5,5$</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                  </div>
+                                </label>
+                        </div>
+                        <div class="promo__more text-center">
+                          <button type="button" class="js-show-more btn"><span>Показать больше инвентаря</span><i></i></button>
+                        </div>
+                        <div class="promo_bottom-line clearfix">
+                          <div class="promo__bottom-line__cases-data">
+                            <p>Общее количество выделеных предметов:<span class="js-inventar-count">0</span></p>
+                            <p>Общая сумма выделеных предметов:<span><span class="js-inventar-amount">0</span><span class="promo__bottom-line__cases-data__currency">₽</span></span></p>
+                          </div>
+                          <div class="promo__bottom-line__btns text-right">
+                            <button type="button" class="promo__bottom-line__btns__withdraw js-output btn btn-blue"><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>Вывести</button>
+                            <button type="button" class="promo__bottom-line__btns__convert js-convert btn btn-lblue"><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>конвертировать</button>
+                            <button type="button" class="promo__bottom-line__btns__contract btn btn-lblue btn-contract js-contract-link">в контракт<span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
           </div>
         </div>
         <div class="footer-wrap">
           <div class="container">
                 <footer class="footer clearfix">
-                  <div class="footer__left"><a href="#">CS:GO</a></div>
+                  <div class="footer__left"><a href="#"><img src="img/template/logo.png" alt="CS:GO"></a></div>
                   <div class="footer__right"><a href="#"> <i class="zmdi zmdi-email"></i>info@csgo.com</a></div>
                   <div class="footer__copy"><span>COPYRIGHT (C) 2017 CS:GO</span></div>
                 </footer>
@@ -349,7 +629,7 @@
         <div id="balanceModal" class="modal fade modal-scale balance-modal">
           <div class="modal-dialog">
             <div class="modal-content"><a href="#" data-dismiss="modal" class="modal__close"></a>
-              <div class="balance-modal__logo"><span>CS:GO</span></div>
+              <div class="balance-modal__logo"><img src="img/template/min-logo.png" alt="CS:GO"></div>
               <div class="balance-modal__title"><span>Пополнение баланса</span></div>
               <div class="balance-modal__form">
                 <input type="text" placeholder="Введите сумму">
@@ -358,7 +638,370 @@
             </div>
           </div>
         </div>
-    <!-- scripts-->
+        <div id="inventarModal" class="modal fade modal-scale contract-inventar">
+          <div class="modal-dialog contract-inventar__dialog">
+            <div class="modal-content contract-inventar__content"><a href="#" data-dismiss="modal" class="modal__close contract-inventar__close"></a>
+              <div class="contract-inventar__logo"><img src="img/template/min-logo.png" alt="CS:GO"></div>
+              <form id="contract-inventar" class="contract-inventar-f">
+                <div class="ccolapse is-collapse">
+                  <div class="ccolapse__head">
+                    <div class="ccolapse__head__left contract-inventar__head__left">
+                      <div class="ccolapse__head__txt contract-inventar__head__txt"><span>Инвентарь</span></div>
+                      <div class="ccolapse__head__left__over"></div>
+                    </div>
+                  </div>
+                  <div class="ccolapse__cnt contract-inventar__cnt">
+                    <div class="promo__cases contract-inventar__cases clearfix js-scroll blue-scroll scroll-w7">
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                                        <label class="promo__cases__col contract-inventar__cases-col">
+                                          <input type="checkbox" name="inventar" value="1" class="hidden">
+                                          <div class="promo-case contract-inventar__case">
+                                            <div class="promo-case__img contract-inventar__case-img">
+                                              <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                            </div>
+                                            <div class="promo-case__name contract-inventar__case-name"><span>AK-47 Redline</span></div>
+                                            <div class="promo-case__price contract-inventar__case-price"><span>$ 5,5</span></div><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>
+                                          </div>
+                                        </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="contract-inventar__submit-block text-center">
+                  <button type="submit" class="contract-inventar__submit btn btn-lblue b-btn">В контракт<span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="inventarOutput" class="modal fade modal-scale inventar-output-modal">
+          <div class="modal-dialog">
+            <div class="modal-content"><a href="#" data-dismiss="modal" class="modal__close"></a>
+              <div class="inventar-output-modal__logo"><img src="img/template/min-logo.png" alt="CS:GO"></div>
+              <div class="inventar-output-modal__form">
+                <div class="inventar-output-modal__desc">
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </div>
+                <div class="promo__cases flex-cases">
+                                <div class="promo__cases__col __simple flex-case-col">
+                                  <div class="promo-case __simple fade-link flex-case">
+                                    <div class="promo-case__img">
+                                      <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="promo__cases__col __simple flex-case-col">
+                                  <div class="promo-case __simple fade-link flex-case">
+                                    <div class="promo-case__img">
+                                      <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="promo__cases__col __simple flex-case-col">
+                                  <div class="promo-case __simple fade-link flex-case">
+                                    <div class="promo-case__img">
+                                      <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="promo__cases__col __simple flex-case-col">
+                                  <div class="promo-case __simple fade-link flex-case">
+                                    <div class="promo-case__img">
+                                      <div class="promo-case__img__case"><img src="img/content/promo-case.png" alt=""></div>
+                                    </div>
+                                  </div>
+                                </div>
+                </div>
+                <button class="inventar-output-modal__submit btn btn-lblue b-btn"><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>Хорошо</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="levelModal" class="modal fade modal-scale level-modal">
+          <div class="modal-dialog">
+            <div class="modal-content"><a href="#" data-dismiss="modal" class="modal__close"></a>
+              <div class="level-modal__logo"><img src="img/template/min-logo.png" alt="CS:GO"></div>
+              <div class="level-modal__title"><span class="lvl__num">
+                  <div class="sidebar__lvl__num level-modal__num"><span class="cur-lvl"></span><span class="next-lvl"></span></div></span><span class="title__text">
+                  Поздравляем! Вы получили новый уровень и теперь можете
+                  бесплатно открыть кейс Классический</span></div>
+              <div class="level-modal__cnt">
+                <div class="level-modal__case"><img src="img/content/simple-case.png"></div>
+                <button class="level-modal__go btn btn-lblue b-btn"><span class="btn-gray__topleft"></span><span class="btn-gray__bottomright"></span>Перейти</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="contactModal" class="modal fade modal-scale info-modal">
+          <div class="modal-dialog">
+            <div class="modal-content"><a href="#" data-dismiss="modal" class="modal__close"></a>
+              <div class="info-modal__logo"><img src="img/template/min-logo.png" alt="CS:GO"></div>
+              <h2 class="info-modal__title"><span>Контакты</span></h2>
+              <div class="info-modal__cnt text-cnt">
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+                <p class="text-cnt__sub-title"> Душа моя озарена неземной радостью</p>
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="cooperationModal" class="modal fade modal-scale info-modal">
+          <div class="modal-dialog">
+            <div class="modal-content"><a href="#" data-dismiss="modal" class="modal__close"></a>
+              <div class="info-modal__logo"><img src="img/template/min-logo.png" alt="CS:GO"></div>
+              <h2 class="info-modal__title"><span>Сотрудничество</span></h2>
+              <div class="info-modal__cnt text-cnt">
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+                <p class="text-cnt__sub-title"> Душа моя озарена неземной радостью</p>
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="conditionsModal" class="modal fade modal-scale info-modal">
+          <div class="modal-dialog">
+            <div class="modal-content"><a href="#" data-dismiss="modal" class="modal__close"></a>
+              <div class="info-modal__logo"><img src="img/template/min-logo.png" alt="CS:GO"></div>
+              <h2 class="info-modal__title"><span>Условия</span></h2>
+              <div class="info-modal__cnt text-cnt">
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+                <p class="text-cnt__sub-title"> Душа моя озарена неземной радостью</p>
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+                <p>
+                  Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми
+                  я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю,
+                  словно созданном для таких, как я.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
     <script data-main="js/main" src="js/require.js"></script>
   </body>
 </html>

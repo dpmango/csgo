@@ -1,0 +1,110 @@
+.it_el_border {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #ebecee;
+  z-index: 9;
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
+
+
+.block__title:extend(.title500 all) {
+  display: inline-block;
+  vertical-align: top;
+  height: 50px;
+  background: #ffffff;
+  color: #55b1ff;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family: "Oswald";
+  padding-top: 6px;
+  padding-left: 20px;
+  padding-right: 22px;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0 -5px 15px -4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 -5px 15px -4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -5px 15px -4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 30px;
+    top: 0;
+    bottom: 0;
+    right: -12px;
+    background: #fff;
+    -webkit-box-shadow: 0 -5px 15px -4px rgba(0, 0, 0, 0.03);
+    -moz-box-shadow: 0 -5px 15px -4px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 -5px 15px -4px rgba(0, 0, 0, 0.03);
+    -webkit-transform: skew(23deg);
+    -moz-transform: skew(23deg);
+    -ms-transform: skew(23deg);
+    -o-transform: skew(23deg);
+    transform: skew(23deg);
+    z-index: 1;
+
+  }
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: #fff;
+  }
+}
+
+.block__title span {
+  position: relative;
+  z-index: 10;
+}
+
+.block__cnt {
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 3;
+}
+
+.block__it {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: relative;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: #fafafa;
+  word-break: break-word;
+  @media (max-width: 500px) {
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ebecee;
+    padding: 5px 0;
+  }
+}
+
+.block__it:nth-child(even) {
+  background: #fff;
+}

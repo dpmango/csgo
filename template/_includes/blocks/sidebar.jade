@@ -7,7 +7,8 @@ mixin sidebar(data)
 			span
 		.sidebar__inn.js-scroll
 			.sidebar__logo
-				a(href="#") CS:GO
+				a(href="#")
+					img(src="img/template/logo.png", alt="CS:GO")
 			.sidebar__login
 				.sidebar__login__txt
 					span Пожалуйста, авторизируйтесь для просмотра профиля
@@ -31,7 +32,7 @@ mixin sidebar(data)
 					.sidebar__user__balance
 						span Баланс
 							b 
-								span.__balanse-num(data-balance="14000")#userBalance 14 000
+								span.__balanse-num(data-balance="25000")#userBalance 25 000
 								i ₽
 								.__balanse-num__change
 						a(href="#balanceModal" data-toggle="modal").sidebar__user__balance__plus
@@ -60,9 +61,12 @@ mixin sidebar(data)
 						span открытых ящиков за 24 часа
 			nav.sidebar__nav
 				ul.reset-list
-					li: a(href="#") Контакты
-					li: a(href="#") Сотрудничество
-					li: a(href="#") Условия
+					li
+						a(href="#contactModal", data-toggle="modal") Контакты
+					li
+						a(href="#cooperationModal", data-toggle="modal") Сотрудничество
+					li
+						a(href="#conditionsModal", data-toggle="modal") Условия
 			.sidebar__soc
 				a(href="#"): i.zmdi.zmdi-steam
 				a(href="#"): i.zmdi.zmdi-twitter

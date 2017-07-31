@@ -1,0 +1,120 @@
+mixin minigames_hunt(data)
+    .minigames-hunt
+        .gransmap-top.clearfix
+            .gransmap__aside.clearfix
+                .gransmap__aside__maps.minigames-hunt__aside__maps
+                    ul.reset-list
+                        li.active: a(href="#" data-map="map1") de_overpass
+                        li: a(href="#" data-map="map2") de_nuke
+                        li: a(href="#" data-map="map3") de_overpass
+                        li: a(href="#" data-map="map1") de_nuke
+                        li: a(href="#" data-map="map2") de_overpass
+                        li: a(href="#" data-map="map3") de_nuke
+                        li: a(href="#" data-map="map1") de_overpass
+                .minigames-hunt__desc
+                    .minigames-hunt__desc__title
+                        span За открытие этого кейса мы вернем на счет 5 000 рублей!
+                    .minigames-hunt__desc__txt
+                        p Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я.
+                        p Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+                        p.note За открытие даних кейсов кэшбэк не предусмотрен
+                    .timer-wrap.minigames-hunt__top__timer-wrap
+                        #timer.timer
+
+
+            mixin gransmap__map__case(top, left, state, hunt, order )
+                if (state == "active")
+                    .gransmap__map__case.active(data-order=order, data-hunt=hunt, style="top: #{top}; left: #{left};")
+                        a(href="#").gransmap__map__case-link
+                            span.gransmap__map__hover
+                            img.gransmap__map__case-img(src="img/content/map-case.png")
+                            .gransmap__map__case-price $ 3.5
+                            span.gransmap__map__shadow
+                        .gransmap__map__arrow
+                            span
+
+                else if(state == "not-active")
+                    .gransmap__map__case.not-active(data-order=order, data-hunt=hunt, style="top: #{top}; left: #{left};")
+                        a(href="#").gransmap__map__case-link
+                            span.gransmap__map__hover
+                            img.gransmap__map__case-img(src="img/content/map-case.png")
+                            .gransmap__map__case-price $ 3.5
+                            span.gransmap__map__shadow
+                        .gransmap__map__arrow
+                            span
+                else if(state == "opening")
+                    .gransmap__map__case.opening(data-order=order, data-hunt=hunt, style="top: #{top}; left: #{left};")
+                        a(href="#").gransmap__map__case-link
+                            span.gransmap__map__hover
+                            img.gransmap__map__case-img(src="img/content/map-case.png")
+                            .gransmap__map__case-price $ 3.5
+                            span.gransmap__map__shadow
+                        img.gransmap__map__prize(src="img/content/case-rotator-img.png")
+                        .gransmap__map__arrow
+                            span
+            mixin gransmap__map__winner(top, left, hunt, order)
+                .winner-el.__pink(data-order=order, data-hunt=hunt, data-color="__pink", style='top: #{top}; left: #{left};')
+                    a(href="#")
+                        .winner-el__img-box
+                            img.winner-el__img(src='img/content/case-rotator-img.png', alt='')
+                        .winner-el__model
+                            span M4A4
+                        .winner-el__name
+                            span Buzzkill
+                    .gransmap__map__arrow
+                        span
+
+            .gransmap__map
+                .gransmap__map__item.active(data-map="map1")
+                    .gransmap__map__item__img
+                        img.map-img(src="img/content/map1.png", alt="")
+                        +gransmap__map__case('19.6%', '88.5%', 'opening', 'hunt1', '1')
+                        +gransmap__map__case('5.6%', '74.5%', 'opening', 'hunt1', '2')
+                        +gransmap__map__case('28.6%', '63.5%', 'active', 'hunt1', '3')
+                        +gransmap__map__case('46.6%', '42.5%', 'not-active', 'hunt1', '4')
+                        +gransmap__map__case('68.6%', '43.5%', 'not-active', 'hunt1', '5')
+                        +gransmap__map__winner('78%', '47%', 'hunt1', '6')
+
+
+                        +gransmap__map__case('65.6%', '22.5%', 'active', 'hunt2', '1')
+                        +gransmap__map__case('38.6%', '21.5%', 'not-active', 'hunt2', '2')
+                        +gransmap__map__case('27.6%', '14.5%', 'not-active', 'hunt2', '3')
+                        +gransmap__map__winner('11%', '13%', 'hunt2', '4')
+
+                .gransmap__map__item(data-map="map2")
+                    .gransmap__map__item__img
+                        img.map-img(src="img/content/map2.png", alt="")
+
+
+                .gransmap__map__item(data-map="map3")
+                    .gransmap__map__item__img
+                        img.map-img(src="img/content/map3.png", alt="")
+
+        .pcase__rotor
+            .pcase__rotor__pointer
+            .pcase__rotor__preitems.clearfix
+            .pcase__rotor__items
+                .pcase__rotor__items__inn.clearfix
+            .pcase__rotor__winitem-wrap
+                .pcase__rotor__winitem.__blue
+                    .pcase__preitem__img
+                        img(src='img/content/case-rotator-img.png' alt='')
+                    .pcase__preitem__name
+                        span M4A4
+                    .pcase__preitem__subname
+                        span Buzzkill
+        .pcase__open-btn
+            .pcase__open-btn__wrap.active
+                button.btn.btn-blue#openCase(data-price="5000")
+                    span.btn-gray__topleft
+                    span.btn-gray__bottomright
+                    | открыть кейс за 5 000 рублей
+            .pcase__open-btn__wrap
+                button.btn.btn-blue#fastedCase
+                    span.btn-gray__topleft
+                    span.btn-gray__bottomright
+                    | ускорить
+        .pcase__itsincase
+            .pcase__itsincase__title
+                span Cписок предметов которые есть в данном кейсе
+            .pcase__itsincase__items.clearfix

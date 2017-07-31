@@ -1,0 +1,53 @@
+mixin admin_sidebar(data)
+    a(href="#").sidebar-over
+    .sidebar
+        a(href="#").sidebar__trigger
+            span
+            span
+            span
+        .sidebar__inn.js-scroll
+            .sidebar__logo
+                a(href="#")
+                    img(src="img/template/logo.png", alt="CS:GO")
+            p.sidebar__admin-title Admin panel
+            .sidebar__stats.sidebar__admin-status
+                .sidebar__stats__line
+                    .sidebar__stats__line__num
+                        span 2 698
+                    .sidebar__stats__line__txt
+                        span пользователей онлайн
+                .sidebar__stats__line
+                    .sidebar__stats__line__num
+                        span 22 698
+                    .sidebar__stats__line__txt
+                        span открытых ящиков
+                .sidebar__stats__line
+                    .sidebar__stats__line__num
+                        span 7 890
+                    .sidebar__stats__line__txt
+                        span пользователей онлайн
+                .sidebar__stats__line
+                    .sidebar__stats__line__num
+                        span 22 698
+                    .sidebar__stats__line__txt
+                        span открытых ящиков
+                .sidebar__stats__line
+                    .sidebar__stats__line__num
+                        span 7 890
+                    .sidebar__stats__line__txt
+                        span открытых ящиков за 24 часа
+            nav.sidebar__nav
+                ul.reset-list
+                    li: a(href="#") Управление кейсами
+                    li: a(href="#") Статистика и финансы
+                    li: a(href="#") Настройки сайта
+                    li: a(href="#") Профили пользователей
+                    li: a(href="#") Редактор гранат
+                    li: a(href="#") Управление акциями
+            .sidebar__soc
+                a(href="#"): i.zmdi.zmdi-steam
+                a(href="#"): i.zmdi.zmdi-twitter
+                a(href="#"): i.zmdi.zmdi-vk
+                a(href="#"): i.zmdi.zmdi-email
+
+

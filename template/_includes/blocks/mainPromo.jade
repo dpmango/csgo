@@ -1,115 +1,120 @@
 mixin mainPromo(data)
-	.mainPromo
-		.ccolapse.is-collapse
-			.ccolapse__head
-				.ccolapse__head__left
-					.ccolapse__head__txt
-						span Промо
-					.ccolapse__head__left__over
-				.ccolapse__head__plus
-			.ccolapse__cnt
-				.promo__cases.clearfix
-						mixin promo-case(data)
-							.promo__cases__col
-								a(href="case.html" title="AK-47 Redline").promo-case.fade-link
+	#mainContent
+		.mainPromo
+			.ccolapse.is-collapse
+				.ccolapse__head
+					.ccolapse__head__left
+						.ccolapse__head__txt
+							span Промо
+						.ccolapse__head__left__over
+					.ccolapse__head__plus
+				.ccolapse__cnt
+					.promo__cases.clearfix
+							mixin promo-case(fire)
+								.promo__cases__col
+									a(href="case.html" title="AK-47 Redline").promo-case.fade-link
+										if fire
+											img.lbl(src="img/template/fire.png")
+										.promo-case__img
+											.promo-case__img__case
+												img(src="img/content/promo-case.png", alt="")
+											.promo-case__img__weapon
+												img(src="img/content/promo-case-weapon.png", alt="")
+										.promo-case__name
+											span AK-47 Redline
+										.promo-case__price
+											span $ 3,4
+										span.btn-gray__topleft
+										span.btn-gray__bottomright
+							+promo-case()
+							+promo-case('fire')
+							+promo-case()
+							+promo-case()
+		.mainCases
+			.ccolapse.is-collapse
+				.ccolapse__head
+					.ccolapse__head__left
+						.ccolapse__head__txt
+							span Особые
+						.ccolapse__head__left__over
+					.ccolapse__head__plus
+				.ccolapse__cnt
+					.promo__cases.clearfix
+						mixin simple-case(fire)
+							.promo__cases__col.__simple
+								a(href="case.html" title="AK-47 Redline").promo-case.__simple.fade-link
+									if fire
+										img.lbl(src="img/template/fire.png")
 									.promo-case__img
 										.promo-case__img__case
-											img(src="img/content/promo-case.png", alt="")
-										.promo-case__img__weapon
-											img(src="img/content/promo-case-weapon.png", alt="")
+											img(src="img/content/simple-case.png", alt="")
 									.promo-case__name
 										span AK-47 Redline
 									.promo-case__price
 										span $ 3,4
 									span.btn-gray__topleft
 									span.btn-gray__bottomright
-						+promo-case()
-						+promo-case()
-						+promo-case()
-						+promo-case()
-	.mainCases
-		.ccolapse.is-collapse
-			.ccolapse__head
-				.ccolapse__head__left
-					.ccolapse__head__txt
-						span Особые
-					.ccolapse__head__left__over
-				.ccolapse__head__plus
-			.ccolapse__cnt
-				.promo__cases.clearfix
-					mixin simple-case(data)
-						.promo__cases__col.__simple
-							a(href="case.html" title="AK-47 Redline").promo-case.__simple.fade-link
-								.promo-case__img
-									.promo-case__img__case
-										img(src="img/content/simple-case.png", alt="")
-								.promo-case__name
-									span AK-47 Redline
-								.promo-case__price
-									span $ 3,4
-								span.btn-gray__topleft
-								span.btn-gray__bottomright
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-		.ccolapse.is-collapse
-			.ccolapse__head
-				.ccolapse__head__left
-					.ccolapse__head__txt
-						span По типу оружия
-					.ccolapse__head__left__over
-				.ccolapse__head__plus
-			.ccolapse__cnt
-				.promo__cases.clearfix
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-		.ccolapse.is-collapse
-			.ccolapse__head
-				.ccolapse__head__left
-					.ccolapse__head__txt
-						span По редкости
-					.ccolapse__head__left__over
-				.ccolapse__head__plus
-			.ccolapse__cnt
-				.promo__cases.clearfix
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-		.ccolapse.is-collapse
-			.ccolapse__head
-				.ccolapse__head__left
-					.ccolapse__head__txt
-						span Классика
-					.ccolapse__head__left__over
-				.ccolapse__head__plus
-			.ccolapse__cnt
-				.promo__cases.clearfix
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
-					+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case('fire')
+						+simple-case()
+						+simple-case()
+						+simple-case('fire')
+						+simple-case()
+						+simple-case('fire')
+						+simple-case()
+			.ccolapse.is-collapse
+				.ccolapse__head
+					.ccolapse__head__left
+						.ccolapse__head__txt
+							span По типу оружия
+						.ccolapse__head__left__over
+					.ccolapse__head__plus
+				.ccolapse__cnt
+					.promo__cases.clearfix
+						+simple-case('fire')
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case('fire')
+						+simple-case('fire')
+						+simple-case()
+						+simple-case()
+						+simple-case()
+			.ccolapse.is-collapse
+				.ccolapse__head
+					.ccolapse__head__left
+						.ccolapse__head__txt
+							span По редкости
+						.ccolapse__head__left__over
+					.ccolapse__head__plus
+				.ccolapse__cnt
+					.promo__cases.clearfix
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case('fire')
+						+simple-case('fire')
+						+simple-case()
+			.ccolapse.is-collapse
+				.ccolapse__head
+					.ccolapse__head__left
+						.ccolapse__head__txt
+							span Классика
+						.ccolapse__head__left__over
+					.ccolapse__head__plus
+				.ccolapse__cnt
+					.promo__cases.clearfix
+						+simple-case('fire')
+						+simple-case('fire')
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
+						+simple-case()
 

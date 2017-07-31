@@ -1326,7 +1326,7 @@ function updateCss(element, i) {
     xRailOffset.left = element.scrollLeft;
   }
   if (i.isScrollbarXUsingBottom) {
-    xRailOffset.bottom = i.scrollbarXBottom - element.scrollTop;
+   // xRailOffset.bottom = i.scrollbarXBottom - element.scrollTop;
   } else {
     xRailOffset.top = i.scrollbarXTop + element.scrollTop;
   }

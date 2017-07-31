@@ -1,0 +1,273 @@
+mixin admin_mainPromo(data)
+    .mainCases.admin_mainCases
+        .ccolapse.is-collapse.category(data-categoryId="1")
+            .ccolapse__head
+                .ccolapse__head__left
+                    .ccolapse__head__txt
+                        span Промо
+                    .ccolapse__head__left__over
+            .ccolapse__cnt
+                .promo__cases.clearfix
+
+                    - for(var i = 0; i < 9; i++ )
+                        .promo__cases__col.__simple(data-id=i)
+                            .promo-case
+                                .promo-case__img
+                                    .promo-case__img__case
+                                        img(src="img/content/simple-case.png", alt="")
+                                .promo-case__name
+                                    span AK-47 Redline
+                                .promo-case__price
+                                    span $ 3,4
+                                .promo-case__delete
+                                    span Удалить кейс?
+                                .promo-case__data
+                                    div
+                                        span открыт 20 раз
+                                        span прибыль 5 700 рублей
+
+                                span.btn-gray__topleft
+                                span.btn-gray__bottomright
+                            .promo-case-btn
+                                button.promo-case-btn__edit.js-edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                button.promo-case-btn__del.js-del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+                            .promo-case-btn-del
+                                button.promo-case-btn-del__ok.js-check-del.btn.btn-action(type="button"): i.zmdi.zmdi-check
+                                button.promo-case-btn-del__no.js-close-del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-close
+
+        .ccolapse.is-collapse.category(data-categoryId="2")
+            .ccolapse__head
+                .ccolapse__head__left
+                    .ccolapse__head__txt
+                        span Особые
+                    .ccolapse__head__left__over
+            .ccolapse__cnt
+                .promo__cases.clearfix
+                    - for(var i = 9; i < 19; i++ )
+                        .promo__cases__col.__simple(data-id=i)
+                            .promo-case
+                                .promo-case__img
+                                    .promo-case__img__case
+                                        img(src="img/content/simple-case.png", alt="")
+                                .promo-case__name
+                                    span AK-47 Redline
+                                .promo-case__price
+                                    span $ 3,4
+                                .promo-case__data
+                                    div
+                                        span открыт 20 раз
+                                        span прибыль 5 700 рублей
+                                .promo-case__delete
+                                    span Удалить кейс?
+                                span.btn-gray__topleft
+                                span.btn-gray__bottomright
+                            .promo-case-btn
+                                button.promo-case-btn__edit.js-edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                button.promo-case-btn__del.js-del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+                            .promo-case-btn-del
+                                button.promo-case-btn-del__ok.js-check-del.btn.btn-action(type="button"): i.zmdi.zmdi-check
+                                button.promo-case-btn-del__no.js-close-del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-close
+        .ccolapse.is-collapse.category(data-categoryId="3")
+            .ccolapse__head
+                .ccolapse__head__left
+                    .ccolapse__head__txt
+                        span По типу оружия
+                    .ccolapse__head__left__over
+            .ccolapse__cnt
+                .promo__cases.clearfix
+                    - for(var i = 19; i < 29; i++ )
+                        .promo__cases__col.__simple(data-id=i)
+                            .promo-case
+                                .promo-case__img
+                                    .promo-case__img__case
+                                        img(src="img/content/simple-case.png", alt="")
+                                .promo-case__name
+                                    span AK-47 Redline
+                                .promo-case__price
+                                    span $ 3,4
+                                .promo-case__data
+                                    div
+                                        span открыт 20 раз
+                                        span прибыль 5 700 рублей
+                                .promo-case__delete
+                                    span Удалить кейс?
+                                span.btn-gray__topleft
+                                span.btn-gray__bottomright
+                            .promo-case-btn
+                                button.promo-case-btn__edit.js-edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                button.promo-case-btn__del.js-del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+                            .promo-case-btn-del
+                                button.promo-case-btn-del__ok.js-check-del.btn.btn-action(type="button"): i.zmdi.zmdi-check
+                                button.promo-case-btn-del__no.js-close-del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-close
+        .ccolapse.is-collapse.category(data-categoryId="4")
+            .ccolapse__head
+                .ccolapse__head__left
+                    .ccolapse__head__txt
+                        span По редкости
+                    .ccolapse__head__left__over
+            .ccolapse__cnt
+                .promo__cases.clearfix
+                    - for(var i = 29; i < 39; i++ )
+                        .promo__cases__col.__simple(data-id=i)
+                            .promo-case
+                                .promo-case__img
+                                    .promo-case__img__case
+                                        img(src="img/content/simple-case.png", alt="")
+                                .promo-case__name
+                                    span AK-47 Redline
+                                .promo-case__price
+                                    span $ 3,4
+                                .promo-case__data
+                                    div
+                                        span открыт 20 раз
+                                        span прибыль 5 700 рублей
+                                .promo-case__delete
+                                    span Удалить кейс?
+                                span.btn-gray__topleft
+                                span.btn-gray__bottomright
+                            .promo-case-btn
+                                button.promo-case-btn__edit.js-edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                button.promo-case-btn__del.js-del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+                            .promo-case-btn-del
+                                button.promo-case-btn-del__ok.js-check-del.btn.btn-action(type="button"): i.zmdi.zmdi-check
+                                button.promo-case-btn-del__no.js-close-del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-close
+        .ccolapse.is-collapse.category(data-categoryId="5")
+            .ccolapse__head
+                .ccolapse__head__left
+                    .ccolapse__head__txt
+                        span Классика
+                    .ccolapse__head__left__over
+            .ccolapse__cnt
+                .promo__cases.clearfix
+                    - for(var i = 39; i < 49; i++ )
+                        .promo__cases__col.__simple(data-id=i)
+                            .promo-case
+                                .promo-case__img
+                                    .promo-case__img__case
+                                        img(src="img/content/simple-case.png", alt="")
+                                .promo-case__name
+                                    span AK-47 Redline
+                                .promo-case__price
+                                    span $ 3,4
+                                .promo-case__data
+                                    div
+                                        span открыт 20 раз
+                                        span прибыль 5 700 рублей
+                                .promo-case__delete
+                                    span Удалить кейс?
+                                span.btn-gray__topleft
+                                span.btn-gray__bottomright
+                            .promo-case-btn
+                                button.promo-case-btn__edit.js-edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                button.promo-case-btn__del.js-del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+                            .promo-case-btn-del
+                                button.promo-case-btn-del__ok.js-check-del.btn.btn-action(type="button"): i.zmdi.zmdi-check
+                                button.promo-case-btn-del__no.js-close-del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-close
+        form#case-actions.ccolapse.is-collapse.add-block
+            .ccolapse__head
+                .ccolapse__head__left
+                    .ccolapse__head__txt
+                        span добавить новый кейс
+                    .ccolapse__head__left__over
+            .ccolapse__cnt
+                .add-case
+                    .add-case__top
+                        .add-case__first-line
+                            input#case-id(type="hidden", value="0")
+                            .add-case__top__form-el.file
+                                input#case-photo(type="file" name="case-photo")
+                                button.file__btn.btn.btn-lblue.b-btn(type="button")
+                                    | загрузить изображение кейса
+                                    span.btn-gray__topleft
+                                    span.btn-gray__bottomright
+                                .file__value
+                            .add-case__top__form-el
+                                input#case-name(type="text", name="case-name", placeholder="Название кейса")
+                            .add-case__top__form-el
+                                input#case-price(type="text", name="case-price", placeholder="Цена кейса")
+                            .add-case__top__form-el
+                                .add-case__top__form-el__select-wrap
+                                    select#case-category(name="case-category")
+                                        option(value="") Категория
+                                        option(value="1") Промо
+                                        option(value="2") Особые
+                                        option(value="3") По типу оружия
+                                        option(value="4") По редкости
+                                        option(value="5") Классика
+                        .add-case__second-line
+                            .add-case__top__form-el
+                                input(type="checkbox", name="", id="c1", class="hidden")
+                                label.add-cas__top__label.style-checkbox(for="c1") Скрытый
+                            .add-case__top__form-el
+                                input(type="checkbox", name="", id="c2", class="hidden")
+                                label.add-cas__top__label.style-checkbox(for="c2") Кэшбэк
+                            .add-case__top__form-el
+                                input(type="checkbox", name="", id="c3", class="hidden")
+                                label.add-cas__top__label.style-checkbox(for="c3") Скрытый
+                            .add-case__top__form-el
+                                input(type="checkbox", name="", id="c4", class="hidden")
+                                label.add-cas__top__label.style-checkbox(for="c4") Кэшбэк
+
+
+
+
+
+
+                .add-block__desc
+                    button.add-block__show-desc.btn.js-show-desc(type="button")
+                        span Показать описание
+                        i.zmdi.zmdi-chevron-down
+                    .add-block__desc-text
+                        textarea#autoGrow(onkeyup="auto_grow(this)") Душа моя озарена неземной радостью, как эти чудесные весенние утра,которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я.
+                p.promo__add-title Добавление предметов в кейс
+                .promo__cases.add-case__cases.flex-cases
+                    mixin simple-case-add(data)
+                        .promo__cases__col.__simple.flex-case-col
+                            .promo-case.flex__case
+                                .promo-case__img
+                                    .promo-case__img__case
+                                        img(src="img/content/simple-case.png", alt="")
+                                .promo-case__name
+                                    span AK-47 Redline
+                                .promo-case__chance
+                                    | Шанс выпадания
+                                    span 2/100
+                                .promo-case__delete
+                                    span Удалить кейс?
+                            .promo-case-btn.flex__btn
+                                button.promo-case-btn__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                button.promo-case-btn__del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+                            .promo-case-btn-del.flex__btn-del
+                                button.promo-case-btn-del__ok.btn.btn-action(type="button"): i.zmdi.zmdi-check
+                                button.promo-case-btn-del__no.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-close
+
+                    //+simple-case-add()
+
+                    #add-el.promo__cases__col.__simple.add-el__form.flex-case-col
+                        .promo-case.add-el__case.flex__case
+                            .add-el__cnt
+                                .add-el__input
+                                    input#el-name(type="text", name="el-name", placeholder="Название")
+                                .add-el__input.add-el__input_chanc
+                                    input#el-chanc(type="text", name="el-chanc", placeholder="Шанс выпадания")
+                                .add-el__price
+                                    span
+                                span.btn-gray__topleft
+                                span.btn-gray__bottomright
+                        .promo-case__btn.flex__btn
+                            button.promo-case-btn__check.js-add-el.btn.btn-action(type="button"): i.zmdi.zmdi-check
+                            button.promo-case-btn__del.js-del-form.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+
+                    .promo__cases__col.__simple.add.flex-case-col
+                        .promo-case.btn-add.flex-case
+                            .promo-case__btn-add-el-wrap
+                                button.promo-case__btn-add-el.js-add-case.btn(type="button")
+                            .contract__btn-add-el__text
+                                span Добавить новый предмет в кейс
+
+
+                .promo__create-btn
+                    button#case-actions-submit.btn.btn-blue.b-btn(type="submit")
+                        | создать кейс
+                        span.btn-gray__topleft
+                        span.btn-gray__bottomright

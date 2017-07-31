@@ -1,0 +1,424 @@
+.finance-data {
+  margin-bottom: 45px;
+}
+.finance-data__block {
+  float: left;
+  padding-right: 15px;
+  @media (max-width: 700px) {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 400px) {
+    padding-right: 0;
+  }
+  &:first-child {
+    width: 16.5%;
+    @media (max-width: 1400px) {
+      width: 19%;
+    }
+    @media (max-width: 1000px) {
+      width: 50%;
+    }
+    @media (max-width: 400px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &:nth-child(2) {
+    width: 16.5%;
+    @media (max-width: 1400px) {
+      width: 19%;
+    }
+    @media (max-width: 1000px) {
+      width: 50%;
+    }
+    @media (max-width: 400px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &:nth-child(3) {
+    width: 24%;
+    @media (max-width: 1400px) {
+      width: 31%;
+    }
+    @media (max-width: 1000px) {
+      width: 50%;
+    }
+    @media (max-width: 400px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &:nth-child(4) {
+    width: 20%;
+    @media (max-width: 1400px) {
+      width: 31%;
+    }
+    @media (max-width: 1000px) {
+      width: 50%;
+    }
+    @media (max-width: 400px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.finance-data__value {
+  font-size: 26px;
+  font-weight: 500;
+  color: #55b1ff;
+  line-height: 1.1;
+}
+.finance-data__currency {
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.finance-data__desc {
+  color: #1c1d1e;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.finance-graph {
+  margin-bottom: 50px;
+}
+
+.finance-graph__cnt {
+  position: relative;
+  max-width: 1035px;
+}
+#stream_funds {
+  max-width: 100%;
+}
+
+.finance-graph__it {
+  height: 580px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  @media (max-width: 1366px) {
+    height: 450px;
+  }
+  @media (max-width: 800px) {
+    height: 350px;
+  }
+  @media (max-width: 500px) {
+    height: 250px;
+  }
+  &.active {
+    opacity: 1;
+    z-index: 1;
+    -webkit-transition: opacity .25s ease-in-out;
+    transition: opacity .25s ease-in-out;
+    position: relative;
+  }
+}
+
+.graph-currency {
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  top: 3px;
+  padding-left: 3px;
+}
+
+.finance-graph__cnt > div > div {
+  height: 100%;
+}
+
+.canvasjs-chart-credit {
+  display: none !important;
+}
+
+.finance-graph__top {
+  margin-bottom: 26px;
+  max-width: 1070px;
+}
+.finance-graph__title {
+  float: left;
+  width: 40%;
+  color: #55b1ff;
+  font-family: "Oswald";
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  @media (max-width: 1100px) {
+    width: 100%;
+    float: none
+  }
+  @media (max-width: 700px) {
+    font-size: 28px;
+  }
+}
+
+.finance-graph__period {
+  text-align: right;
+  float: right;
+  margin-top: 16px;
+  @media (max-width: 1100px) {
+    width: 100%;
+    text-align: left;
+    float: none;
+  }
+}
+
+
+
+
+.finance__statsbl {
+  width: 50%;
+  min-width: 500px;
+  @media (max-width: 1350px) {
+    min-width: 0;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.finance__statsbl__title:extend(.title500 all){
+  display: inline-block;
+  vertical-align: top;
+  height: 50px;
+  background: #ffffff;
+  color: #55b1ff;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family: "Oswald";
+  padding-top: 6px;
+  padding-left: 20px;
+  padding-right: 22px;
+  letter-spacing: 1px;
+  box-shadow: 0 -5px 15px -4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  span {
+    position: relative;
+    z-index: 10;
+  }
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 30px;
+    top: 0;
+    bottom: 0;
+    right: -12px;
+    background: #fff;
+    box-shadow: 0 -5px 15px -4px rgba(0, 0, 0, 0.03);
+    transform: skew(23deg);
+    z-index: 1;
+  }
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: #fff;
+
+  }
+}
+
+
+.finance__statsbl__cnt {
+  // height: 480px;
+  background: #fff;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+
+.finance__statistic {
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+}
+
+.finance__statistic__it {
+  background: #fafafa;
+  flex-grow: 1;
+  height: 20%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: #ebecee;
+    z-index: 10;
+  }
+  @media (max-width: 500px) {
+    flex-flow: wrap;
+    padding: 10px 0;
+    text-align: center;
+    &:before {
+      display: none;
+    }
+  }
+  &:nth-child(even) {
+    background: #fff;
+  }
+}
+
+.finance__statistic__it__left {
+  width: 50%;
+  color: #1c1d1e;
+  font-size: 18px;
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.finance__statistic__it__right {
+  width: 50%;
+  color: #55b1ff;
+  font-size: 26px;
+  font-weight: 700;
+  padding-left: 60px;
+  padding-right: 20px;
+  @media (max-width: 500px) {
+    width: 100%;
+    padding-left: 20px;
+  }
+  i {
+    position: relative;
+    font-size: 14px;
+    font-style: normal;
+    top: -8px;
+    left: 2px;
+  }
+}
+
+
+
+
+
+
+.cases-sales__cnt {
+  padding-top: 10px;
+}
+
+.cases-sales__head__left {
+  pointer-events: none;
+  @media (max-width: 1800px) {
+    height: auto;
+    display: block;
+    float: none;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    &:before, &:after {
+      display: none;
+    }
+  }
+}
+.cases-sales__head__left__over {
+  @media (max-width: 1800px) {
+    display: none;
+  }
+}
+
+.sales-form {
+  float: right;
+  margin-top: -4px;
+  @media (max-width: 1800px) {
+    float: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+.sales-form__last-radio {
+  margin-right: 46px;
+  @media (max-width: 500px) {
+    margin-right: 0;
+  }
+}
+
+.sales-form__select-wrap {
+  display: inline-block;
+  min-width: 230px;
+  @media (max-width: 1000px) {
+    margin: 15px 0;
+  }
+  @media (max-width: 700px) {
+    min-width: 211px;
+  }
+  &:after {
+    right: 12px;
+  }
+
+}
+.sales-form__select {
+  border: 1px solid #a2d2fa;
+  color: #1c1d1e;
+  font-weight: 300;
+  padding-left: 15px;
+}
+
+
+.promo-case__count {
+  font-weight: 700;
+  color: #1b2137;
+  text-align: center;
+}
+
+.cases-sales {
+  margin-top: 80px;
+}
+
+.cases-sales__head__txt {
+  letter-spacing: 1.5px;
+}
+
+.cases-sales__case {
+  margin-bottom: 45px;
+  height: 100%;
+  .btn-gray__topleft{
+    width: 10px;
+    height: 10px;
+
+  }
+  .btn-gray__bottomright {
+    width: 10px;
+    height: 10px;
+  }
+  &:hover {
+    .promo-case__data {
+      opacity: 1;
+      z-index: 10;
+    }
+  }
+  &:hover {
+    .btn-gray__topleft, .btn-gray__bottomright {
+      opacity: 0;
+    }
+  }
+}
+.cases-sales__case-name {
+  margin-top: 22px;
+  font-size: 14px;
+}
+
+

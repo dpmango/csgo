@@ -1,0 +1,799 @@
+mixin admin_minigames_control(data)
+    .minigames-control
+        .specials.minigames-control__block
+            .current-special
+                .current-special__name
+                   p.current-special__name-val Раскопки
+                   p.current-special__desc текущая промо-акция
+                .current-special__time
+                    .current-special__val
+                        #timer.current-special__timer.timer
+                        .current-special__btns
+                            button.btn.btn-action(type="button")
+                                i.zmdi.zmdi-edit
+                            button.btn.btn-action.btn-destr(type="button")
+                                i.zmdi.zmdi-delete
+                    p.current-special__desc осталось до окончания
+            form.block.special-form
+                .block__title.special-form__title.minigames-control__title
+                    span Новая акция
+                .block__cnt.special-form__cnt
+                    .block__data-table
+                        .block__it.special-form__it
+                            .block__data.special-form__name
+                                span Тип акции
+                            .block__data.special-form__inp
+                                .select-wrap
+                                    select
+                                        option Категория
+                                        option Категория
+                                        option Категория
+                                        option Категория
+                        .block__it.special-form__it
+                            .block__data.special-form__name
+                                span Длительность
+                            .block__data.special-form__inp
+                                input#datetimepicker-special.datetimepicker__input.special-form__date-inp( accesskey='w')
+
+                        .block__it.special-form__it
+                            .block__data.special-form__name
+                                span Идентификатор
+                            .block__data.special-form__inp
+                                input(type="text", value="Категория")
+                button.special-form__submit.btn.btn-blue.b-btn(type="submit")
+                    | Запустить акцию
+                    span.btn-gray__topleft
+                    span.btn-gray__bottomright
+
+        form.ccolapse.is-collapse.minigames-control__block.add-block
+            .ccolapse__head
+                .ccolapse__head__left
+                    .ccolapse__head__txt.minigames-control__title
+                        span Скидки
+                    .ccolapse__head__left__over
+            .ccolapse__cnt
+                .promo__cases.flex-cases
+                    mixin simple-case-add(data)
+                        .promo__cases__col.__simple.flex-case-col
+                            .promo-case.flex__case.add-block__case
+                                .promo-case__img
+                                    .promo-case__img__case
+                                        img(src="img/content/simple-case.png", alt="")
+                                .promo-case__name.add-block__case-name
+                                    span AK-47 Redline
+                                .promo-case__chance
+                                    | Шанс выпадания
+                                    span 2/100
+                                .promo-case__delete
+                                    span Удалить кейс?
+                            .promo-case-btn.flex__btn
+                                button.promo-case-btn__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                button.promo-case-btn__del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+                            .promo-case-btn-del.flex__btn-del
+                                button.promo-case-btn-del__ok.btn.btn-action(type="button"): i.zmdi.zmdi-check
+                                button.promo-case-btn-del__no.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-close
+
+                    +simple-case-add()
+
+                    .promo__cases__col.__simple.flex-case-col
+                        .promo-case.add-el__case.flex__case
+                            .add-el__cnt
+                                .add-el__input
+                                   .select-wrap
+                                       select
+                                        option Категория
+                                        option Категория
+                                        option Категория
+                                        option Категория
+                                .add-el__input.add-el__input_chanc
+                                    input(type="text", name="", placeholder="Цена со скидкой")
+                                .add-el__price.add-block__add-el-price
+                                    span $ 3.25
+                                span.btn-gray__topleft
+                                span.btn-gray__bottomright
+                        .promo-case__btn.flex__btn
+                            button.promo-case-btn__check.js-add-el.btn.btn-action(type="button"): i.zmdi.zmdi-check
+                            button.promo-case-btn__del.js-del-form.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+
+                    .promo__cases__col.__simple.add.flex-case-col
+                        .promo-case.btn-add.flex-case
+                            .promo-case__btn-add-el-wrap
+                                button.promo-case__btn-add-el.js-add-case.btn(type="button")
+                            .contract__btn-add-el__text
+                                span Добавить новый предмет в кейс
+                    .promo__cases__col.__simple.add.flex-case-col
+                        .promo-case.btn-add.flex-case
+                            .promo-case__btn-add-el-wrap
+                                button.promo-case__btn-add-el.js-add-case.btn(type="button")
+                            .contract__btn-add-el__text
+                                span Добавить новый предмет в кейс
+
+        form.ccolapse.is-collapse.minigames-control__block.add-block
+            .ccolapse__head
+                .ccolapse__head__left
+                    .ccolapse__head__txt.minigames-control__title
+                        span Скидки
+                    .ccolapse__head__left__over
+            .ccolapse__cnt
+                .promo__cases.flex-cases
+                    mixin simple-case-add(data)
+                        .promo__cases__col.__simple.flex-case-col
+                            .promo-case.flex__case.add-block__case
+                                .promo-case__img
+                                    .promo-case__img__case
+                                        img(src="img/content/simple-case.png", alt="")
+                                .promo-case__name.add-block__case-name
+                                    span AK-47 Redline
+                                .promo-case__chance
+                                    | Шанс выпадания
+                                    span 2/100
+                                .promo-case__delete
+                                    span Удалить кейс?
+                            .promo-case-btn.flex__btn
+                                button.promo-case-btn__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                button.promo-case-btn__del.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+                            .promo-case-btn-del.flex__btn-del
+                                button.promo-case-btn-del__ok.btn.btn-action(type="button"): i.zmdi.zmdi-check
+                                button.promo-case-btn-del__no.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-close
+
+                    +simple-case-add()
+
+                    .promo__cases__col.__simple.flex-case-col
+                        .promo-case.add-el__case.flex__case
+                            .add-el__cnt
+                                .add-el__input
+                                    .select-wrap
+                                        select
+                                            option Категория
+                                            option Категория
+                                            option Категория
+                                            option Категория
+                                .add-el__input.add-el__input_chanc
+                                    input(type="text", name="", placeholder="Цена со скидкой")
+                                .add-el__price.add-block__add-el-price
+                                    span $ 3.25
+                                span.btn-gray__topleft
+                                span.btn-gray__bottomright
+                        .promo-case__btn.flex__btn
+                            button.promo-case-btn__check.js-add-el.btn.btn-action(type="button"): i.zmdi.zmdi-check
+                            button.promo-case-btn__del.js-del-form.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+
+                    .promo__cases__col.__simple.add.flex-case-col
+                        .promo-case.btn-add.flex-case
+                            .promo-case__btn-add-el-wrap
+                                button.promo-case__btn-add-el.js-add-case.btn(type="button")
+                            .contract__btn-add-el__text
+                                span Добавить новый предмет в кейс
+                    .promo__cases__col.__simple.add.flex-case-col
+                        .promo-case.btn-add.flex-case
+                            .promo-case__btn-add-el-wrap
+                                button.promo-case__btn-add-el.js-add-case.btn(type="button")
+                            .contract__btn-add-el__text
+                                span Добавить новый предмет в кейс
+
+        .ccolapse.is-collapse.map-ctrl.minigames-control__block
+            .ccolapse__head
+                .ccolapse__head__left
+                    .ccolapse__head__txt.minigames-control__title
+                        span Промо
+                    .ccolapse__head__left__over
+            .ccolapse__cnt
+                .minigames-control__gransmap-top.js-gransmap-top
+                    .gransmap__aside.minigames-control__gransmap-aside.clearfix.js-gransmap-aside
+                        .gransmap__aside__maps.minigames-control__aside__maps
+                            ul.reset-list
+                                ul.reset-list
+                                    li.active
+                                        a(href="#" data-map="map1")
+                                            | de_overpass
+                                        span.admin-gransmap__action-block
+                                            button.admin-gransmap__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                            button.admin-gransmap__delete.btn.btn-action.btn-destr.js-del-map(type="button"): i.zmdi.zmdi-delete
+                                    li
+                                        a(href="#" data-map="map2")
+                                            | de_nuke
+                                        span.admin-gransmap__action-block
+                                            button.admin-gransmap__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                            button.admin-gransmap__delete.btn.btn-action.btn-destr.js-del-map(type="button"): i.zmdi.zmdi-delete
+                                    li
+                                        a(href="#" data-map="map3")
+                                            | de_overpass
+                                        span.admin-gransmap__action-block
+                                            button.admin-gransmap__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                            button.admin-gransmap__delete.btn.btn-action.btn-destr.js-del-map(type="button"): i.zmdi.zmdi-delete
+                                    li
+                                        a(href="#" data-map="map4")
+                                            | de_nuke
+                                        span.admin-gransmap__action-block
+                                            button.admin-gransmap__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                            button.admin-gransmap__delete.btn.btn-action.btn-destr.js-del-map(type="button"): i.zmdi.zmdi-delete
+                                    li
+                                        a(href="#" data-map="map5")
+                                            | de_overpass
+                                        span.admin-gransmap__action-block
+                                            button.admin-gransmap__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                            button.admin-gransmap__delete.btn.btn-action.btn-destr.js-del-map(type="button"): i.zmdi.zmdi-delete
+                                    li
+                                        a(href="#" data-map="map6")
+                                            | de_nuke
+                                        span.admin-gransmap__action-block
+                                            button.admin-gransmap__edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                            button.admin-gransmap__delete.btn.btn-action.btn-destr.js-del-map(type="button"): i.zmdi.zmdi-delete
+
+                        form.gransmap__aside__create-map
+                            input.create-map__name(type="text", name="map-name", placeholder="Название")
+                            .create-map__img.file
+                                input#map-photo(type="file" name="map-photo")
+                                button.create-map__file.file__btn.btn.btn-lblue.b-btn(type="button")
+                                    | загрузить изображение
+                                    span.btn-gray__topleft
+                                    span.btn-gray__bottomright
+                                .file__value
+                            button.create-map__btn.btn.btn-blue.b-btn(type="submit")
+                                | Создаать карту
+                                span.btn-gray__topleft
+                                span.btn-gray__bottomright
+
+                    .gransmap__map
+                        .gransmap__map__item.active(data-map="map1")
+                            .gransmap__map__item__img.minigames-control__map__item__img.js-gransmap-img-h
+                                .gransmap__map__item__img-inner
+                                    img.map-img.minigames-control__map-img(src="img/content/map1.png", data-coords="case", alt="")
+                            .gransmap__way
+                                .way-list
+                                    .way-list__its
+                                        .way-list__it
+                                            label.style-radio.way-list__lbl
+                                                | Путь 1
+                                                input(type="radio", value="hunt1", name="map1-hunt", checked)
+                                        .way-list__it
+                                            label.style-radio.way-list__lbl
+                                                | Путь 2
+                                                input(type="radio", value="hunt2", name="map1-hunt")
+                                            button.btn.btn-action.btn-destr.js-del-way(type="button"): i.zmdi.zmdi-delete
+                                    .way-list__add
+                                        button.way-list__add.js-add-way.btn(type="button")
+                                            i.zmdi.zmdi-plus
+                                            | Добавить путь
+                                .way-cnt
+                                    .way-cnt__it(data-hunt="hunt1")
+                                        .way-cnt__container
+                                            form.way-data.js-way-case
+                                                p.way-data__title Добавить кейс
+                                                .way-data__form-box.clearfix
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="case-x")
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="case-y")
+                                                .way-data__form-box
+                                                    .way-data__select-wrap.select-wrap
+                                                        select(name="case-img")
+                                                            option(value="") Выбор кейса
+                                                            option(value="img/content/map-case.png") Кейс
+                                                            option(value="img/content/map-case.png") Кейс
+                                                            option(value="img/content/map-case.png") Кейс
+                                                button.fw-btn.btn.btn-lblue.b-btn(type="submit")
+                                                    | создать
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                                            form.way-data.js-way-prize
+                                                p.way-data__title Выбор приза
+                                                .way-data__form-box.clearfix
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="prize-x")
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="prize-y")
+                                                .way-data__form-box
+                                                    .way-data__select-wrap.select-wrap
+                                                        select(name="prize-id")
+                                                            option(value="") Выбор кейса
+                                                            option(value="1") M4A4 Buzzkill
+                                                            option(value="2") M4A4 Buzzkill
+                                                            option(value="3") M4A4 Buzzkill
+
+                                                button.fw-btn.btn.btn-lblue.b-btn(type="submit")
+                                                    | Применить
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                                        .way-cnt__container
+                                            .way__img
+                                                .way__img-box.file
+                                                    input(type="file" name="")
+                                                    button.file__btn.btn.btn-lblue.b-btn(type="button")
+                                                        | загрузить изображение
+                                                        span.btn-gray__topleft
+                                                        span.btn-gray__bottomright
+                                                    .file__value
+                                                button.fw-btn.btn.btn-blue.b-btn(type="submit")
+                                                    | Применить
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+
+                        .gransmap__map__item(data-map="map2")
+                            .gransmap__map__item__img.minigames-control__map__item__img.js-gransmap-img-h
+                                .gransmap__map__item__img-inner
+                                    img.map-img.minigames-control__map-img(src="img/content/map2.png", data-coords="case", alt="")
+                            .gransmap__way
+                                .way-list
+                                    .way-list__its
+                                        .way-list__it
+                                            label.style-radio.way-list__lbl
+                                                | Путь 1
+                                                input(type="radio", value="hunt1", name="map2-hunt", checked)
+                                        .way-list__it
+                                            label.style-radio.way-list__lbl
+                                                | Путь 2
+                                                input(type="radio", value="hunt2", name="map2-hunt")
+                                            button.btn.btn-action.btn-destr.js-del-way(type="button"): i.zmdi.zmdi-delete
+                                    .way-list__add
+                                        button.way-list__add.js-add-way.btn(type="button")
+                                            i.zmdi.zmdi-plus
+                                            | Добавить путь
+                                .way-cnt
+                                    .way-cnt__it(data-hunt="hunt1")
+                                        .way-cnt__container
+                                            form.way-data.js-way-case
+                                                p.way-data__title Добавить кейс
+                                                .way-data__form-box.clearfix
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="case-x")
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="case-y")
+                                                .way-data__form-box
+                                                    .way-data__select-wrap.select-wrap
+                                                        select(name="case-img")
+                                                            option(value="") Выбор кейса
+                                                            option(value="img/content/map-case.png") Кейс
+                                                            option(value="img/content/map-case.png") Кейс
+                                                            option(value="img/content/map-case.png") Кейс
+                                                button.fw-btn.btn.btn-lblue.b-btn(type="submit")
+                                                    | создать
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                                            form.way-data.js-way-prize
+                                                p.way-data__title Выбор приза
+                                                .way-data__form-box.clearfix
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="prize-x")
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="prize-y")
+                                                .way-data__form-box
+                                                    .way-data__select-wrap.select-wrap
+                                                        select(name="prize-id")
+                                                            option(value="") Выбор кейса
+                                                            option(value="1") M4A4 Buzzkill
+                                                            option(value="2") M4A4 Buzzkill
+                                                            option(value="3") M4A4 Buzzkill
+
+                                                button.fw-btn.btn.btn-lblue.b-btn(type="submit")
+                                                    | Применить
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                                        .way-cnt__container
+                                            .way__img
+                                                .way__img-box.file
+                                                    input(type="file" name="")
+                                                    button.file__btn.btn.btn-lblue.b-btn(type="button")
+                                                        | загрузить изображение
+                                                        span.btn-gray__topleft
+                                                        span.btn-gray__bottomright
+                                                    .file__value
+                                                button.fw-btn.btn.btn-blue.b-btn(type="submit")
+                                                    | Применить
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                        .gransmap__map__item(data-map="map3")
+                            .gransmap__map__item__img.minigames-control__map__item__img.js-gransmap-img-h
+                                .gransmap__map__item__img-inner
+                                    .gransmap__map__item__img-inner
+                                        img.map-img.minigames-control__map-img(src="img/content/map3.png", data-coords="case", alt="")
+                            .gransmap__way
+                                .way-list
+                                    .way-list__its
+                                        .way-list__it
+                                            label.style-radio.way-list__lbl
+                                                | Путь 1
+                                                input(type="radio", value="hunt1", name="map3-hunt", checked)
+                                        .way-list__it
+                                            label.style-radio.way-list__lbl
+                                                | Путь 2
+                                                input(type="radio", value="hunt2", name="map3-hunt")
+                                            button.btn.btn-action.btn-destr.js-del-way(type="button"): i.zmdi.zmdi-delete
+                                    .way-list__add
+                                        button.way-list__add.js-add-way.btn(type="button")
+                                            i.zmdi.zmdi-plus
+                                            | Добавить путь
+                                .way-cnt
+                                    .way-cnt__it(data-hunt="hunt1")
+                                        .way-cnt__container
+                                            form.way-data.js-way-case
+                                                p.way-data__title Добавить кейс
+                                                .way-data__form-box.clearfix
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="case-x")
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="case-y")
+                                                .way-data__form-box
+                                                    .way-data__select-wrap.select-wrap
+                                                        select(name="case-img")
+                                                            option(value="") Выбор кейса
+                                                            option(value="img/content/map-case.png") Кейс
+                                                            option(value="img/content/map-case.png") Кейс
+                                                            option(value="img/content/map-case.png") Кейс
+                                                button.fw-btn.btn.btn-lblue.b-btn(type="submit")
+                                                    | создать
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                                            form.way-data.js-way-prize
+                                                p.way-data__title Выбор приза
+                                                .way-data__form-box.clearfix
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="prize-x")
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="prize-y")
+                                                .way-data__form-box
+                                                    .way-data__select-wrap.select-wrap
+                                                        select(name="prize-id")
+                                                            option(value="") Выбор кейса
+                                                            option(value="1") M4A4 Buzzkill
+                                                            option(value="2") M4A4 Buzzkill
+                                                            option(value="3") M4A4 Buzzkill
+
+                                                button.fw-btn.btn.btn-lblue.b-btn(type="submit")
+                                                    | Применить
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                                        .way-cnt__container
+                                            .way__img
+                                                .way__img-box.file
+                                                    input(type="file" name="")
+                                                    button.file__btn.btn.btn-lblue.b-btn(type="button")
+                                                        | загрузить изображение
+                                                        span.btn-gray__topleft
+                                                        span.btn-gray__bottomright
+                                                    .file__value
+                                                button.fw-btn.btn.btn-blue.b-btn(type="submit")
+                                                    | Применить
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                        .gransmap__map__item(data-map="map4")
+                            .gransmap__map__item__img.minigames-control__map__item__img.js-gransmap-img-h
+                                .gransmap__map__item__img-inner
+                                    img.map-img.minigames-control__map-img(src="img/content/map1.png", data-coords="case", alt="")
+                            .gransmap__way
+                                .way-list
+                                    .way-list__its
+                                        .way-list__it
+                                            label.style-radio.way-list__lbl
+                                                | Путь 1
+                                                input(type="radio", value="hunt1", name="map4-hunt", checked)
+                                        .way-list__it
+                                            label.style-radio.way-list__lbl
+                                                | Путь 2
+                                                input(type="radio", value="hunt2", name="map4-hunt")
+                                            button.btn.btn-action.btn-destr.js-del-way(type="button"): i.zmdi.zmdi-delete
+                                    .way-list__add
+                                        button.way-list__add.js-add-way.btn(type="button")
+                                            i.zmdi.zmdi-plus
+                                            | Добавить путь
+                                .way-cnt
+                                    .way-cnt__it(data-hunt="hunt1")
+                                        .way-cnt__container
+                                            form.way-data.js-way-case
+                                                p.way-data__title Добавить кейс
+                                                .way-data__form-box.clearfix
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="case-x")
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="case-y")
+                                                .way-data__form-box
+                                                    .way-data__select-wrap.select-wrap
+                                                        select(name="case-img")
+                                                            option(value="") Выбор кейса
+                                                            option(value="img/content/map-case.png") Кейс
+                                                            option(value="img/content/map-case.png") Кейс
+                                                            option(value="img/content/map-case.png") Кейс
+                                                button.fw-btn.btn.btn-lblue.b-btn(type="submit")
+                                                    | создать
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                                            form.way-data.js-way-prize
+                                                p.way-data__title Выбор приза
+                                                .way-data__form-box.clearfix
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="prize-x")
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="prize-y")
+                                                .way-data__form-box
+                                                    .way-data__select-wrap.select-wrap
+                                                        select(name="prize-id")
+                                                            option(value="") Выбор кейса
+                                                            option(value="1") M4A4 Buzzkill
+                                                            option(value="2") M4A4 Buzzkill
+                                                            option(value="3") M4A4 Buzzkill
+
+                                                button.fw-btn.btn.btn-lblue.b-btn(type="submit")
+                                                    | Применить
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                                        .way-cnt__container
+                                            .way__img
+                                                .way__img-box.file
+                                                    input(type="file" name="")
+                                                    button.file__btn.btn.btn-lblue.b-btn(type="button")
+                                                        | загрузить изображение
+                                                        span.btn-gray__topleft
+                                                        span.btn-gray__bottomright
+                                                    .file__value
+                                                button.fw-btn.btn.btn-blue.b-btn(type="submit")
+                                                    | Применить
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                        .gransmap__map__item(data-map="map5")
+                            .gransmap__map__item__img.minigames-control__map__item__img.js-gransmap-img-h
+                                .gransmap__map__item__img-inner
+                                    img.map-img.minigames-control__map-img(src="img/content/map1.png", data-coords="case", alt="")
+                            .gransmap__way
+                                .way-list
+                                    .way-list__its
+                                        .way-list__it
+                                            label.style-radio.way-list__lbl
+                                                | Путь 1
+                                                input(type="radio", value="hunt1", name="map5-hunt", checked)
+                                        .way-list__it
+                                            label.style-radio.way-list__lbl
+                                                | Путь 2
+                                                input(type="radio", value="hunt2", name="map5-hunt")
+                                            button.btn.btn-action.btn-destr.js-del-way(type="button"): i.zmdi.zmdi-delete
+                                    .way-list__add
+                                        button.way-list__add.js-add-way.btn(type="button")
+                                            i.zmdi.zmdi-plus
+                                            | Добавить путь
+                                .way-cnt
+                                    .way-cnt__it(data-hunt="hunt1")
+                                        .way-cnt__container
+                                            form.way-data.js-way-case
+                                                p.way-data__title Добавить кейс
+                                                .way-data__form-box.clearfix
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="case-x")
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="case-y")
+                                                .way-data__form-box
+                                                    .way-data__select-wrap.select-wrap
+                                                        select(name="case-img")
+                                                            option(value="") Выбор кейса
+                                                            option(value="img/content/map-case.png") Кейс
+                                                            option(value="img/content/map-case.png") Кейс
+                                                            option(value="img/content/map-case.png") Кейс
+                                                button.fw-btn.btn.btn-lblue.b-btn(type="submit")
+                                                    | создать
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                                            form.way-data.js-way-prize
+                                                p.way-data__title Выбор приза
+                                                .way-data__form-box.clearfix
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="prize-x")
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="prize-y")
+                                                .way-data__form-box
+                                                    .way-data__select-wrap.select-wrap
+                                                        select(name="prize-id")
+                                                            option(value="") Выбор кейса
+                                                            option(value="1") M4A4 Buzzkill
+                                                            option(value="2") M4A4 Buzzkill
+                                                            option(value="3") M4A4 Buzzkill
+
+                                                button.fw-btn.btn.btn-lblue.b-btn(type="submit")
+                                                    | Применить
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                                        .way-cnt__container
+                                            .way__img
+                                                .way__img-box.file
+                                                    input(type="file" name="")
+                                                    button.file__btn.btn.btn-lblue.b-btn(type="button")
+                                                        | загрузить изображение
+                                                        span.btn-gray__topleft
+                                                        span.btn-gray__bottomright
+                                                    .file__value
+                                                button.fw-btn.btn.btn-blue.b-btn(type="submit")
+                                                    | Применить
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                        .gransmap__map__item(data-map="map6")
+                            .gransmap__map__item__img.minigames-control__map__item__img.js-gransmap-img-h
+                                .gransmap__map__item__img-inner
+                                    img.map-img.minigames-control__map-img(src="img/content/map3.png", data-coords="case", alt="")
+                            .gransmap__way
+                                .way-list
+                                    .way-list__its
+                                        .way-list__it
+                                            label.style-radio.way-list__lbl
+                                                | Путь 1
+                                                input(type="radio", value="hunt1", name="map6-hunt", checked)
+                                        .way-list__it
+                                            label.style-radio.way-list__lbl
+                                                | Путь 2
+                                                input(type="radio", value="hunt2", name="map6-hunt")
+                                            button.btn.btn-action.btn-destr.js-del-way(type="button"): i.zmdi.zmdi-delete
+                                    .way-list__add
+                                        button.way-list__add.js-add-way.btn(type="button")
+                                            i.zmdi.zmdi-plus
+                                            | Добавить путь
+                                .way-cnt
+                                    .way-cnt__it(data-hunt="hunt1")
+                                        .way-cnt__container
+                                            form.way-data.js-way-case
+                                                p.way-data__title Добавить кейс
+                                                .way-data__form-box.clearfix
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="case-x")
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="case-y")
+                                                .way-data__form-box
+                                                    .way-data__select-wrap.select-wrap
+                                                        select(name="case-img")
+                                                            option(value="") Выбор кейса
+                                                            option(value="img/content/map-case.png") Кейс
+                                                            option(value="img/content/map-case.png") Кейс
+                                                            option(value="img/content/map-case.png") Кейс
+                                                button.fw-btn.btn.btn-lblue.b-btn(type="submit")
+                                                    | создать
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                                            form.way-data.js-way-prize
+                                                p.way-data__title Выбор приза
+                                                .way-data__form-box.clearfix
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="prize-x")
+                                                    label.way-data__coord
+                                                        input(type="text", value="", name="prize-y")
+                                                .way-data__form-box
+                                                    .way-data__select-wrap.select-wrap
+                                                        select(name="prize-id")
+                                                            option(value="") Выбор кейса
+                                                            option(value="1") M4A4 Buzzkill
+                                                            option(value="2") M4A4 Buzzkill
+                                                            option(value="3") M4A4 Buzzkill
+
+                                                button.fw-btn.btn.btn-lblue.b-btn(type="submit")
+                                                    | Применить
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+                                        .way-cnt__container
+                                            .way__img
+                                                .way__img-box.file
+                                                    input(type="file" name="")
+                                                    button.file__btn.btn.btn-lblue.b-btn(type="button")
+                                                        | загрузить изображение
+                                                        span.btn-gray__topleft
+                                                        span.btn-gray__bottomright
+                                                    .file__value
+                                                button.fw-btn.btn.btn-blue.b-btn(type="submit")
+                                                    | Применить
+                                                    span.btn-gray__topleft
+                                                    span.btn-gray__bottomright
+        .ccolapse.is-collapse.minigames-info.minigames-control__block.without-move
+            .ccolapse__head
+                .ccolapse__head__left
+                    .ccolapse__head__txt.minigames-control__title
+                        span Скидки
+                    .ccolapse__head__left__over
+            .ccolapse__cnt
+                .minigames-info__cnt.info
+                    .info__block.active
+                        a(href="#").info__block__title Как пополнить баланс на сайте?
+                            .info__block__plus
+                        .info__block__cnt
+                            .minigames-info__container
+                                .minigames-info__answer-it
+                                    .minigames-info__data
+                                        p.minigames-info__data-val 3213
+                                        p.minigames-info__data-desc кейсов открыто
+                                    .minigames-info__data
+                                        p.minigames-info__data-val 3010
+                                        p.minigames-info__data-desc участников
+                                    .minigames-info__data
+                                        p.minigames-info__data-val 3213
+                                        p.minigames-info__data-desc кейсов открыто
+                                    .minigames-info__data
+                                        p.minigames-info__data-val 3010
+                                        p.minigames-info__data-desc участников
+                                .minigames-info__answer-it
+                                    .minigames-info__data
+                                        p.minigames-info__data-val
+                                            | 21999
+                                            span.minigames-info__data-currency ₽
+                                        p.minigames-info__data-desc прибыль
+                                    .minigames-info__data
+                                        p.minigames-info__data-val 916
+                                        p.minigames-info__data-desc карт пройдено
+                                    .minigames-info__data
+                                        p.minigames-info__data-val
+                                            | 21999
+                                            span.minigames-info__data-currency ₽
+                                        p.minigames-info__data-desc прибыль
+                                    .minigames-info__data
+                                        p.minigames-info__data-val 916
+                                        p.minigames-info__data-desc карт пройдено
+                    .info__block
+                        a(href="#").info__block__title Что за купоны на бонус к пополнению баланса?
+                            .info__block__plus
+                        .info__block__cnt
+                            p Душа моя озарена неземной радостью, как эти чудесные весенние утр
+                    .info__block
+                        a(href="#").info__block__title Я приобрел купон на бонус к пополнению баланса, но не получил код.
+                            .info__block__plus
+                        .info__block__cnt
+                            p Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя, что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты.
+                    .info__block
+                        a(href="#").info__block__title Что за купоны на бонус к пополнению баланса?
+                            .info__block__plus
+                        .info__block__cnt
+                            p Душа моя озарена неземной радостью, как эти чудесные весенние утр
+                    .info__block
+                        a(href="#").info__block__title Я приобрел купон на бонус к пополнению баланса, но не получил код.
+                            .info__block__plus
+                        .info__block__cnt
+                            p Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя, что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты.
+                    .info__block
+                        a(href="#").info__block__title Что за купоны на бонус к пополнению баланса?
+                            .info__block__plus
+                        .info__block__cnt
+                            p Душа моя озарена неземной радостью, как эти чудесные весенние утр
+                    .info__block
+                        a(href="#").info__block__title Я приобрел купон на бонус к пополнению баланса, но не получил код.
+                            .info__block__plus
+                        .info__block__cnt
+                            p Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя, что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты.
+                .pagination.clearfix
+                    span.pagination__active
+                        span 1
+                        | ,
+                    a(href="").pagination__link 2,
+                    a(href="").pagination__link 3,
+                    a(href="").pagination__link 4
+                    a(href="").pagination__link ...
+                    a(href="").pagination__link 99
+        .ccolapse.is-collapse.case-price.minigames-control__block
+            .ccolapse__head
+                .ccolapse__head__left
+                    .ccolapse__head__txt.minigames-control__title
+                        span Скидки
+                    .ccolapse__head__left__over
+            form.ccolapse__cnt
+                .case-price__cnt
+                    .case-price__it.case-price__case
+                        p.case-price__title Кейс
+                        .case-price__inp-box
+                            .select-wrap
+                                select
+                                    option Выбор кейса
+                                    option Выбор кейса
+                                    option Выбор кейса
+                                    option Выбор кейса
+                    .case-price__it.case-price__start-val
+                        p.case-price__title Начяльная цена
+                        .case-price__inp-box
+                            input.case-price__inp(type="text", placeholder="Ведите значение")
+                            span.case-price__currency ₽
+                    .case-price__it.case-price__finish-val
+                        p.case-price__title Конечная цена
+                        .case-price__inp-box
+                            input.case-price__inp(type="text", placeholder="Ведите значение")
+                            span.case-price__currency ₽
+                    .case-price__it.case-price__btn-it
+                        button.btn.btn-blue.b-btn.b-btn.fw-btn(type="submit")
+                            | Применить
+                            span.btn-gray__topleft
+                            span.btn-gray__bottomright
+
+
+
+
+
+
+
+

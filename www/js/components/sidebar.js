@@ -23,3 +23,17 @@ $('#logoutBtn').on('click', function(e) {
 	$('.sidebar__user').hide();
 	e.preventDefault();
 });
+
+
+$('.reset-list a').click(function() {
+	var popup = $(this).parent().find('.text_popup');
+
+	if(popup.length) {
+		console.log(popup.css('display'));
+		if(popup.css('visibility') == 'hidden') {
+            popup.addClass('visible-popup');
+        }	else {
+            popup.removeClass('visible-popup');
+        }
+	}
+});

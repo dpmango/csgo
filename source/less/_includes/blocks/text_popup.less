@@ -1,0 +1,27 @@
+.text_popup {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 150%;
+  margin-left: 10px;
+  width: 306px;
+  padding: 15px;
+  color: #232a30;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  z-index: -1;
+  &.visible-popup {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+  }
+  @media (max-width: 700px) {
+    width: 260px;
+  }
+}

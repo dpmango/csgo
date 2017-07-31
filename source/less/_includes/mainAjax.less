@@ -1,0 +1,42 @@
+.main-page .container{
+  overflow: hidden;
+  padding: 0 5px;
+}
+
+.contentWrap{
+  position: relative;
+  transition: all 0.5s linear;
+  left: 0;
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+.contentWrap > div {
+  margin-right: 10px;
+  float: left;
+}
+
+
+#caseContent .pcase__top__case__img img{
+  @media (min-width: 768px) {
+    position: fixed;
+    opacity: 0;
+    transition: all .6s linear, transform 0.4s linear, left 0.4s linear, top 0.4s ease-out;
+    //transition: transform .4s linear;
+    transform: scale(0.3, 0.3);
+    z-index: 999;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      &.arrived {
+        position: relative;
+        top: auto !important;
+        left: auto !important;
+        transition: 0s;
+        opacity: 1;
+      }
+    }
+  }
+}

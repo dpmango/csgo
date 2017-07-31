@@ -1,0 +1,181 @@
+mixin admin_setting(data)
+    .setting
+            .row
+                .col-xs-5.setting__col5
+                    form#setting.setting-form.block
+                        .block__title
+                            span настройки
+                        .block__cnt
+                            .block__data-table
+                                .block__it.setting-form__it
+                                    .block__data.setting-form__name
+                                        span Максимальный кэшбек
+                                    .block__data.setting-form__value
+                                        .setting-form__max-cashback
+                                            | 10
+                                            span %
+
+                                .block__it.setting-form__it
+                                    .block__data.setting-form__name
+                                        span Шаг кэшбека
+                                    .block__data.setting-form__value
+                                        .setting-form__cashback-step
+                                            input.text-center(type="text", name="cashback-step", placeholder="Введите значение")
+
+                                .block__it.setting-form__it
+                                    .block__data.setting-form__name
+                                        span Включить синхронизацию
+                                    .block__data.setting-form__value
+                                        div.setting-form__checkbox
+                                            input(type="checkbox", name="enable-sync", class="hidden", id="enable-sync")
+                                            label.setting-form__label.style-checkbox(for="enable-sync") Да
+                                        div.setting-form__checkbox
+                                            input(type="checkbox", name="disabe-sync", class="hidden", id="disable-sync")
+                                            label.setting-form__label.style-checkbox(for="disable-sync") Нет
+
+                                .block__it.setting-form__it
+                                    .block__data.setting-form__name
+                                        span Выключить автообновление
+                                    .block__data.setting-form__value
+                                        .setting-form__range.range
+                                            .range__range-slider.setting-form__range-slider
+                                                .range__sliderValue 12
+                                            .range__min 0
+                                            .range__max 100
+                        button.setting-form__update.btn.btn-lblue.b-btn(type="submit")
+                            | обновить
+                            span.btn-gray__topleft
+                            span.btn-gray__bottomright
+
+                .col-xs-7.setting__col7
+                    .block.events
+                        .block__title
+                            span лог событий
+                        .block__cnt
+                            .events-search
+                                form.events-filter
+                                    p.events-filter__title.js-events-filter Фильтры
+                                    .events-filter__cnt
+                                        .events-filter__inp-box
+                                            label.events-filter__label Дата
+                                            div.datetimepicker.datetimepicker_h_40
+                                                span.datetimepicker__text С:
+                                                input#datetimepicker-from.datetimepicker__input.form-control(accesskey='w')
+                                            div.datetimepicker.datetimepicker_h_40
+                                                span.datetimepicker__text По:
+                                                input#datetimepicker-to.datetimepicker__input.form-control(accesskey='w')
+                                        .events-filter__inp-box
+                                            label.events-filter__label Тип события
+                                            .events-filter__select-wrap.select-wrap
+                                                select.events-filter__cat
+                                                    option Категория
+                                                    option Категория
+                                                    option Категория
+                                                    option Категория
+
+
+
+                                form.events-search__input-block
+                                    input.events-search__input(type="text", name="search", placeholder="Поиск")
+                                    i.zmdi.zmdi-search
+                            .block__data-table.events__data-table.js-scroll.blue-scroll.scroll-w7
+                                - for(var i = 0; i < 20; i++ )
+                                    .block__it.events__it
+                                        .block__data.events__time 3/02/2017 21:53
+                                        .block__data.events__name Buzzmonster_77
+                                        .block__data.events__desc
+                                            | Открыт UPS-S | Orion (Factory New)  из кейса Operation
+                                            | Phoenix (13 765 рублей)
+                        .pagination.clearfix
+                            span.pagination__active
+                                span 1
+                                | ,
+                            a(href="").pagination__link 2,
+                            a(href="").pagination__link 3,
+                            a(href="").pagination__link 4
+                            a(href="").pagination__link ...
+                            a(href="").pagination__link 99
+            .row
+                .col-sm-6.setting__col6
+                    form#events-form.block.events-form
+                        .block__title
+                            span лог событий
+                        .block__cnt
+                            .block__data-table.events-form__data-table.js-scroll.blue-scroll.scroll-w7
+                                - for(var i = 0; i < 20; i++ )
+                                    .block__it.events-form__it
+                                        .block__data.events-form__name AK-47 | Redline (Minimal Wear)
+                                        .block__data.events-form__check
+                                            label.events-form__label.style-checkbox.without-id
+                                                input(type="checkbox", class="hidden")
+                                        .block__data.events-form__actions
+                                            .events-form__actions-block
+                                                .events-form__price
+                                                    | 10
+                                                    span ₽
+                                                input.events-form__change-name(type="text", placeholder="Введите значение", name="name")
+                                        .block__data.events-form__btn-block
+                                            .events-form__action-block
+                                                button.events-form__edit.js-event-edit.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                                button.events-form__delete.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+                                            .events-form__edit-block
+                                                button.events-form__ok.btn.btn-action(type="button"): i.zmdi.zmdi-check
+                                                button.events-form__no.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-close
+                .col-sm-6.setting__col6
+                    form#bots-form.block.bots-form
+                        .block__title.bots-form__title
+                            span Боты
+                        .block__cnt
+                            .block__data-table.bots-form__data-table.js-scroll.blue-scroll.scroll-w7
+                                mixin bot(name, state)
+                                    .block__it.bots-form__it
+                                        .block__data.bots-form__name
+
+
+                                            label.bots-form__label.style-checkbox-s.without-id
+                                                | #{name}
+                                                if(state == 'checked')
+                                                    input(type="checkbox", name=name, checked)
+                                                else if (state == "disabled")
+                                                    input(type="checkbox", name=name,  disabled, checked )
+                                                else
+                                                    input(type="checkbox", name=name, )
+                                        .block__data.bots-form_pass
+                                            input.bots-form_pass-input.pass(type="password", name="password", value="********")
+                                        .block__data.bots-form__category
+                                            .bots-form__select-wrap.select-wrap
+                                                select.bots-form__cat-select(name=-"", id="")
+                                                    option Категория
+                                                    option Категория
+                                                    option Категория
+                                                    option Категория
+                                        .block__data.bots-form__btn-block
+                                            .bots-form__action-block
+                                                button.btn.btn-action(type="button"): i.zmdi.zmdi-edit
+                                                button.btn.btn-action.btn-destr(type="button"): i.zmdi.zmdi-delete
+                                +bot('VERYLONGNAME_BOT', 'checked')
+                                +bot('shortBOT_666', 'checked')
+                                +bot('VERYLONGNAME_BOT', '')
+                                +bot('shortBOT_666', '')
+                                +bot('VERYLONGNAME_BOT', '')
+                                +bot('shortBOT_666', 'disabled')
+                                +bot('shortBOT_666', 'disabled')
+                                +bot('VERYLONGNAME_BOT', 'checked')
+                                +bot('shortBOT_666', 'checked')
+                                +bot('VERYLONGNAME_BOT', '')
+                                +bot('shortBOT_666', '')
+                                +bot('VERYLONGNAME_BOT', '')
+                                +bot('VERYLONGNAME_BOT', 'checked')
+                                +bot('shortBOT_666', 'checked')
+                                +bot('VERYLONGNAME_BOT', '')
+                                +bot('shortBOT_666', '')
+                                +bot('VERYLONGNAME_BOT', '')
+                                +bot('VERYLONGNAME_BOT', 'checked')
+                                +bot('shortBOT_666', 'checked')
+                                +bot('VERYLONGNAME_BOT', '')
+                                +bot('shortBOT_666', '')
+                                +bot('VERYLONGNAME_BOT', '')
+
+
+
+

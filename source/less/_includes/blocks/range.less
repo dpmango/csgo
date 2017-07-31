@@ -1,0 +1,41 @@
+.range {
+  max-width: 200px;
+  margin: 0 auto;
+  position: relative;
+}
+.range__sliderValue, .range__min, .range__max {
+  position: absolute;
+}
+.range__sliderValue {
+  color: #1c1d1e;
+  font-weight: 300;
+  top: 15px;
+  width: 24px;
+  text-align: center;
+  margin-left: -8px;
+}
+.range__min, .range__max {
+  color: #55b1ff;
+  font-size: 18px;
+  font-weight: 500;
+  top: -10px;
+}
+
+.range__min {
+  left: 0;
+}
+.range__max{
+  right: 5px;
+}
+.range .ui-widget.ui-widget-content {
+  border: none;
+  height: 1px;
+  background: #ebecee;
+}
+.range .ui-slider .ui-slider-handle {
+  width: 28px;
+  height: 28px;
+  top: -14px;
+  background: url('../img/template/range.png') center center no-repeat;
+  border: 0;
+}

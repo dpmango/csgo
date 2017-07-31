@@ -1,0 +1,120 @@
+.admin-gransmap__aside__maps {
+  @media (max-width: 619px) {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.admin-gransmap-top{
+  .gransmap__aside__maps {
+    margin-bottom: 30px;
+  }
+
+  .gransmap__aside__create {
+    max-width: 202px;
+    @media (max-width: 619px) {
+      max-width: 100%;
+      text-align: center;
+    }
+    button {
+      width: 100%;
+      max-width: 202px;
+    }
+  }
+  #create-grans {
+    display: none;
+  }
+
+
+  .gransmap__aside__create__select-wrap:extend(.select-wrap all){
+    margin-bottom: 20px;
+    margin-top: 8px;
+  }
+  select {
+    color: #030400;
+    padding-left: 22px;
+  }
+
+  .gransmap__aside__create__youtube {
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  .gransmap__aside__create__title{
+    margin-bottom: 16px;
+    color: #55b1ff;
+    font-family: "Oswald";
+    font-size: 24px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .gransmap__aside__create__coords {
+    label {
+      display: block;
+      float: left;
+      width: 50%;
+      &:first-child {
+        padding-right: 12px;
+      }
+      &:last-child {
+        padding-left: 15px;
+      }
+
+      span {
+        display: block;
+        margin-bottom: 3px;
+      }
+      input {
+        text-align: center;
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+.gransmap__aside__create {
+  input {
+    margin-bottom: 12px;
+  }
+}
+
+.admin-gransmap__action-block {
+  padding-left: 15px;
+}
+
+.admin-gransmap__edit, admin-gransmap__delete {
+  margin: 0 9px;
+}
+.gransmap__aside__create-map {
+  margin-bottom: 70px;
+  @media (max-width: 700px) {
+    margin-bottom: 40px;
+  }
+}
+
+.create-map__btn {
+  width: 100%;
+}
+
+.create-map__name {
+  margin-bottom: 40px;
+  @media (max-width: 700px) {
+    margin-bottom: 15px;
+  }
+}
+
+.create-map__img {
+  margin-bottom: 40px;
+  @media (max-width: 700px) {
+    margin-bottom: 15px;
+  }
+}
+
+.create-map__file {
+  height: auto;
+  min-height: 50px;
+  line-height: 1.6;
+  padding: 5px 0;
+}
+

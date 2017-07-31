@@ -79,6 +79,7 @@
 .pcase__top__case__img {
 	text-align: center;
 	margin-top: 21px;
+	min-height: 205px;
 	@media (max-width: 1399px) {
 		margin-top: 20px;
 		max-width: 220px;
@@ -126,6 +127,9 @@
 	font-size: 18px;
 	font-weight: 300;
 	line-height: 27px;
+	p {
+		margin-bottom: 11px;
+	}
 }
 
 .pcase__top__lvl {
@@ -435,6 +439,7 @@
 	}
 }
 
+
 .pcase__rotor__winitem {
 	&.__white {color: #b0b0b0 !important;}
 	&.__lightBlue {color: #6496e1 !important;}
@@ -457,8 +462,40 @@
 		background: currentColor;
 		color: inherit;
 	}
+
+	.pcase__preitem__top-text {
+		position: absolute;
+		right: 7px;
+		top: 10px;
+		color: #EA6A2A;
+		font-size: 17px;
+		span {
+			font-size: 8px;
+			position: relative;
+			top: -8px;
+			left: -3px;
+		}
+	}
+
+
 	.pcase__preitem__name {
 		margin-top: 2px;
+	}
+
+	.pcase__preitem__wear {
+		opacity: 0;
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 1;
+		transition: all 0.3s ease-in-out;
+	}
+
+	.pcase__preitem__name:hover ~ .pcase__preitem__wear,
+	.pcase__preitem__subname:hover ~ .pcase__preitem__wear {
+		opacity: 1;
 	}
 	.pcase__preitem__img {
 		img {
@@ -590,6 +627,9 @@
 	font-size: 31px;
 	font-weight: 400;
 	text-transform: uppercase;
+	@media (max-width: 700px) {
+		font-size: 25px;
+	}
 }
 
 .pcase__itsincase__items {
@@ -698,6 +738,17 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.pcase__itsincase__item__price {
+	text-align: center;
+	font-size: 16px;
+	transition: color 0.5s ease;
+	font-weight: 700;
+	color: #1b2137;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 /*=====  End of casepage  ======*/

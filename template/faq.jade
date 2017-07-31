@@ -1,9 +1,5 @@
-include _includes/mixins
-doctype html
-html(lang='ru')
-	- var title = 'CS:GO - FAQ';
-	include _includes/head.jade
-
+extends layout/main.jade
+block body
 	body
 		include _includes/svg.jade
 		include _includes/blocks/sidebar.jade
@@ -29,4 +25,4 @@ html(lang='ru')
 		//- +modals()
 
 		// scripts
-		include _includes/scripts.jade
+		script(data-main="js/main" src='js/require.js')

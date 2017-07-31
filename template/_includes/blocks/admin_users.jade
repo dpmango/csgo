@@ -1,0 +1,134 @@
+mixin admin_users(data)
+    .admin-users
+        form.users__search
+            .users__search__input-s-block
+                input.users__search__input(type="text", name="search", placeholder="Поиск по имени или ID")
+                i.zmdi.zmdi-search
+            .users__search__input-block
+                .users__search-select_wrap.select-wrap
+                    select
+                        option Категория
+                        option Категория
+                        option Категория
+                        option Категория
+            button.users__search__submit.btn.btn-lblue.b-btn(type="submit")
+                | поиск
+                span.btn-gray__topleft
+                span.btn-gray__bottomright
+
+        .ccolapse.is-collapse.users
+            form.ccolapse__head.users__head
+                .ccolapse__head__left.users__head-left
+                    .ccolapse__head__txt
+                        span Пользователи
+
+                .users__period
+                    label.style-radio
+                        | Неделя
+                        input(type="radio", name="period", value="week", checked)
+                    label.style-radio
+                        | Месяц
+                        input(type="radio", name="period", value="month")
+                    label.style-radio
+                        | Год
+                        input(type="radio", name="period", value="year")
+                    label.style-radio
+                        | За все время
+                        input(type="radio", name="period", value="all")
+                .users__zero
+                    input(type="checkbox", name="", id="zero-user", class="hidden")
+                    label.style-checkbox(for="zero-user") Показывать нулевых пользователей
+
+            .ccolapse__cnt.users__cnt
+                .t-user.js-scroll.blue-scroll.scroll-w7
+                    table.tbl.js-scroll.blue-scroll.scroll-w7
+                        thead.table__head
+                            tr
+                                td.table__head-d.users__nik-text
+                                    a.table__head-a(href="#") Ник
+                                td.table__head-d
+                                    a.table__head-a(href="#") Уровень
+                                td.table__head-d
+                                    a.table__head-a(href="#") Внесенные деньги
+                                td.table__head-d
+                                    a.table__head-a(href="#") Сумма выведенного
+                                td.table__head-d
+                                    a.table__head-a(href="#") Средняя цена
+                                td.table__head-d
+                                    a.table__head-a(href="#") Прибыль/убыток
+                                td.table__head-d
+                                    a.table__head-a(href="#") Открыто кейсов
+                                td.table__head-d
+                                    a.table__head-a(href="#") Заработано кэшбэком
+                                td.table__head-d
+                                    a.table__head-a(href="#") Дата регистрации
+                                td.table__head-d
+                                    a.table__head-a(href="#") Последнее посещение
+                        tbody
+                            mixin user(name, country, d1, d2, d3, d4, d5, d6, d7, d8, d9)
+                                tr.table__r
+                                    td.table__d.user__nik
+                                        img.user__country(src="img/template/country/#{country}")
+                                        span.user__name #{name}
+                                    td.table__d #{d1}
+                                    td.table__d #{d2}
+                                    td.table__d #{d3}
+                                    td.table__d #{d4}
+                                    td.table__d #{d5}
+                                    td.table__d #{d6}
+                                    td.table__d #{d7}
+                                    td.table__d #{d8}
+                                    td.table__d #{d9}
+                            +user('UserName2', 'c1.gif', '11', '3123', '44234', '312', '32131', '3134', '236', '88', '85634')
+                            +user('UserName3', 'c2.gif', '5', '31')
+                            +user('UserName4', 'c3.gif', '7', '', '', '312', '', '', '', '', '')
+                            +user('UserName3', 'c1.gif', '9')
+                            +user('UserName4', 'c2.gif', '10')
+                            +user('UserName3', 'c3.gif', '2')
+                            +user('UserName4', 'c1.gif', '3')
+                            +user('UserName3', 'c1.gif', '9')
+                            +user('UserName4', 'c2.gif', '10')
+                            +user('UserName3', 'c3.gif', '2')
+                            +user('UserName4', 'c1.gif', '3')
+                            +user('UserName3', 'c1.gif', '9')
+                            +user('UserName4', 'c2.gif', '10')
+                            +user('UserName3', 'c3.gif', '2')
+                            +user('UserName4', 'c1.gif', '3')
+                            +user('UserName3', 'c1.gif', '9')
+                            +user('UserName4', 'c2.gif', '10')
+                            +user('UserName3', 'c3.gif', '2')
+                            +user('UserName4', 'c1.gif', '3')
+                            +user('UserName3', 'c1.gif', '9')
+                            +user('UserName4', 'c2.gif', '10')
+                            +user('UserName3', 'c3.gif', '2')
+                            +user('UserName4', 'c1.gif', '3')
+                            +user('UserName3', 'c1.gif', '9')
+                            +user('UserName4', 'c2.gif', '10')
+                            +user('UserName3', 'c3.gif', '2')
+                            +user('UserName4', 'c1.gif', '3')
+                            +user('UserName3', 'c1.gif', '9')
+                            +user('UserName4', 'c2.gif', '10')
+                            +user('UserName3', 'c3.gif', '2')
+                            +user('UserName4', 'c1.gif', '3')
+                            +user('UserName3', 'c1.gif', '9')
+                            +user('UserName4', 'c2.gif', '10')
+                            +user('UserName3', 'c3.gif', '2')
+                            +user('UserName4', 'c1.gif', '3')
+            .pagination.clearfix
+                span.pagination__active
+                    span 1
+                    | ,
+                a(href="").pagination__link 2,
+                a(href="").pagination__link 3,
+                a(href="").pagination__link 4
+                a(href="").pagination__link ...
+                a(href="").pagination__link 99
+
+
+
+
+
+
+
+
+

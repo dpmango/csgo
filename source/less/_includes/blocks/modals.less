@@ -156,5 +156,405 @@
 	}
 }
 
+
+/* inventarModal   */
+
+.contract-inventar__cases {
+	max-height: 452px;
+	padding: 12px 9px 23px 9px;
+	position: relative;
+}
+
+.contract-inventar__cases-col {
+	width: 25%;
+}
+.contract-inventar__head__left {
+	cursor: default;
+	pointer-events: none;
+	padding-left: 20px;
+	padding-top: 10px;
+	&:hover {
+		color: #ffffff;
+	}
+}
+
+.contract-inventar__head__txt {
+	font-size: 22px;
+}
+
+.contract-inventar__logo {
+	color: #55b1ff;
+	font-size: 13px;
+	font-weight: 900;
+	letter-spacing: 1.5px;
+}
+
+.contract-inventar__dialog {
+	width: 830px;
+	max-width: 95%;
+}
+
+.contract-inventar__close {
+	top: 12px;
+	right: 10px;
+}
+
+.contract-inventar__cnt {
+	padding: 0;
+}
+
+.contract-inventar-f {
+	margin: 13px 27px 0 45px;
+	@media (max-width: 700px) {
+		margin: 13px 20px 0 20px;
+	}
+}
+
+.contract-inventar__submit-block {
+	margin-top: 16px;
+}
+.contract-inventar__submit {
+	width: 220px;
+	max-width: 100%;
+}
+
+.contract-inventar__case-name {
+	margin-top: 19px;
+	font-size: 15px;
+	letter-spacing: -0.5px;
+}
+
+.contract-inventar__case-price {
+	font-size: 13px;
+}
+
+.contract-inventar__content {
+	padding: 10px 10px 33px 10px;
+}
+
+.contract-inventar .promo__cases__col input:checked + .promo-case{
+	box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.19);
+}
+
+.contract-inventar__case{
+	padding-bottom: 18px;
+	padding-top: 14px;
+	margin-bottom: 24px;
+	.btn-gray__bottomright, .btn-gray__topleft {
+		width: 10px;
+		height: 10px;
+	}
+}
+
+.contract-inventar__case:hover {
+	.btn-gray__bottomright, .btn-gray__topleft {
+		opacity: 0;
+	}
+	.contract-inventar__case-img:after {
+		opacity: 0;
+	}
+    .contract-inventar__case-price {
+	    color: #1b2137;
+    }
+}
+
+.contract-inventar__case-img:before {
+	padding-bottom: 60.2%;
+}
+
+.contract-inventar .promo__cases__col input:checked + .promo-case .btn-gray__topleft {
+	 opacity: 1;
+	 top: -1px;
+	 left: -1px;
+}
+
+.contract-inventar .promo__cases__col input:checked + .promo-case .btn-gray__bottomright{
+	opacity: 1;
+	bottom: -1px;
+	right: -1px;
+}
+
+.contract-inventar .promo__cases__col {
+	cursor: pointer;
+}
+
+/* end inventarModal   */
+
+
+
+
+
+
+/*  inventar output modal */
+
+.inventar-output-modal{
+	.modal-dialog {
+		width: auto;
+		max-width: 700px;
+		@media (max-width: 767px) {
+			max-width: 90%;
+		}
+	}
+	.modal-content {
+		padding: 10px 20px 40px;
+	}
+}
+
+
+.inventar-output-modal__title {
+	text-align: center;
+	color: #333;
+	font-family: "Oswald";
+	font-size: 31px;
+	font-weight: 300;
+	text-transform: uppercase;
+	margin-top: 3px;
+}
+
+.inventar-output-modal__desc {
+	margin: 20px 0;
+	font-size: 16px;
+}
+.inventar-output-modal__submit {
+	min-width: 220px;
+	margin: 0 auto;
+	display: block;
+}
+.inventar-output-modal__form {
+	.promo__cases{
+		margin-bottom: 20px;
+		@media (max-width: 500px) {
+			justify-content: center;
+		}
+	}
+
+	.promo__cases__col {
+		width: 25% !important;
+		@media (max-width: 500px) {
+			width: 50% !important;
+		}
+	}
+	.inventar__item-subname {
+		color: #00ff48;
+		margin-top: 0 !important;
+	}
+
+	.inventar__item {
+		&:hover {
+			box-shadow: none;
+			&:before {
+				opacity: 0;
+			}
+		}
+		.btn-gray__topleft, .btn-gray__bottomright {
+			opacity: 0;
+		}
+	}
+
+}
+/*  end inventar output modal */
+
+
+/* level modal */
+.level-modal{
+	.modal-dialog {
+		width: auto;
+		max-width: 606px;
+		@media (max-width: 767px) {
+			max-width: 90%;
+		}
+	}
+	.modal-content {
+		padding: 10px;
+	}
+}
+.level-modal__logo {
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.level-modal__title {
+	display: flex;
+	color: #333;
+	font-family: "Oswald";
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-top: 3px;
+	@media (max-width: 500px) {
+		flex-wrap: wrap;
+	}
+}
+
+.title__text {
+	flex: 1 1 90%;
+	padding-left: 10px;
+	@media (max-width: 500px) {
+		flex: 1 1 100%;
+		padding-left: 0;
+
+	}
+}
+.lvl__num {
+	flex: 0 0 74px;
+	@media (max-width: 500px) {
+		flex: 1 1 100%;
+		margin-bottom: 10px;
+
+	}
+}
+
+.level-modal__num {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 42px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 18px;
+	margin: 5px auto 0;
+	background-color: #55b1ff;
+	&:before, &:after {
+		font-size: 0;
+		transition: all .7s ease-in-out
+	}
+}
+
+.level-modal__num-new {
+	&:after {
+		font-size: 4px;
+	}
+	&:before {
+		font-size: 8px;
+	}
+}
+
+.level-modal__case {
+	text-align: center;
+	margin: 30px 0;
+	img{
+		max-width: 100%;
+	}
+}
+
+.level-modal__go {
+	min-width: 220px;
+	margin: 0 auto;
+	display: block;
+}
+
+.level-modal__cnt {
+	margin-bottom: 30px;
+}
+
+.next-lvl {
+	display: none;
+	display: block;
+
+}
+
+.cur-lvl {
+	display: block;
+	transform: scale(1);
+	opacity: 1;
+}
+
+.cur-lvl.hideLvl {
+	animation: hideLvl 0.7 ease-in-out;
+	//transition: all 0.7s linear;
+
+}
+
+@keyframes hideLvl {
+	0% {
+		transfprm: scale(1, 1);
+		opacity: 1;
+	}
+	20%{
+		opacity: .5;
+	}
+	40%{
+		opacity: .9;
+	}
+	60%{
+		opacity: .5;
+	}
+	80%{
+		opacity: .7;
+	}
+	90%{
+		opacity: .5;
+	}
+	100% {
+		transfprm: scale(3, 3);
+		opacity: 0;
+	}
+}
+
+/*  end level modal */
+
+
+/* info modal */
+.info-modal .modal-dialog {
+	width: auto;
+	max-width: 606px;
+}
+@media (max-width: 767px) {
+	.info-modal .modal-dialog {
+		max-width: 90%;
+	}
+}
+.info-modal .modal-content {
+	padding: 20px 40px;
+}
+@media (max-width: 500px) {
+	.info-modal .modal-content{
+		padding: 20px;
+	}
+}
+.info-modal__logo {
+	text-align: center;
+	margin-bottom: 11px;
+}
+.info-modal__title {
+	text-align: center;
+	color: #333;
+	font-family: "Oswald";
+	font-size: 22px;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+.text-cnt__sub-title {
+	font-size: 17px;
+	margin-bottom: 10px;
+	margin-top: 15px;
+	text-align: center;
+	color: #333;
+	font-weight: 700;
+}
+
+
+.info-modal__cnt {
+	margin-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+	.text-cnt {
+		text-align: center;
+	}
+	.modal__close:after, .modal__close:before {
+		width: 20px;
+	}
+}
+
+@media (max-width: 767px) {
+	.modal__close:after, .modal__close:before {
+		width: 20px;
+	}
+}
+/*  end info modal */
+
+
+
 /*=====  End of modals  ======*/
 
